@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Http/Controllers/DashboardController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666280242737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666281000402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class DashboardController extends Controller\n {\n-    public function index()\n+    public function index(){\n+        ret\n+    }\n }\n"
+                },
+                {
+                    "date": 1666281008163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class DashboardController extends Controller\n {\n     public function index(){\n-        ret\n+        return view()\n     }\n }\n"
+                },
+                {
+                    "date": 1666281025183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class DashboardController extends Controller\n {\n     public function index(){\n-        return view()\n+        return view('features.city.index');\n     }\n }\n"
+                }
+            ],
+            "date": 1666280242737,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass DashboardController extends Controller\n{\n    public function index()\n}\n"
+        }
+    ]
+}

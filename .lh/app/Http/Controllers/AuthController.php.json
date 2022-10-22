@@ -1,0 +1,46 @@
+{
+    "sourceFile": "app/Http/Controllers/AuthController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1666275641465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666276153856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class AuthController extends Controller\n {\n-    public function \n+    public function login(){\n+        ret\n+    }\n }\n"
+                },
+                {
+                    "date": 1666276159580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class AuthController extends Controller\n {\n     public function login(){\n-        ret\n+        return view('auth\n     }\n }\n"
+                },
+                {
+                    "date": 1666276165285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class AuthController extends Controller\n {\n     public function login(){\n-        return view('auth\n+        return view(''features.auth.login\n     }\n }\n"
+                },
+                {
+                    "date": 1666276171318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class AuthController extends Controller\n {\n     public function login(){\n-        return view(''features.auth.login\n+        return view('features.auth.login');\n     }\n }\n"
+                },
+                {
+                    "date": 1666276460562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,6 @@\n {\n     public function login(){\n         return view('features.auth.login');\n     }\n+    \n }\n"
+                },
+                {
+                    "date": 1666276466195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n {\n     public function login(){\n         return view('features.auth.login');\n     }\n-    public function ppros\n+    public function ppro\n }\n"
+                },
+                {
+                    "date": 1666276473653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n {\n     public function login(){\n         return view('features.auth.login');\n     }\n-    public function process_login\n+    public function process_login(){\n }\n"
+                }
+            ],
+            "date": 1666275641465,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass AuthController extends Controller\n{\n    public function \n}\n"
+        }
+    ]
+}

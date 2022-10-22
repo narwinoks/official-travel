@@ -1,0 +1,62 @@
+{
+    "sourceFile": "database/migrations/2022_10_20_160850_create_cities_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1666282145008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666282150914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n-            $table->string()\n+            $table->string('');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282173753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n-            $table->string('');\n+            $table->string('city');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282180964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     {\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n+            $table->string('provinces');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282187359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n+            $table->String('state');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282210692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n-            $table->String('state');\n+            $table->String('island');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282250583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n+            $table->e\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282258567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n-            $table->e\n+            $table->enum('overseas');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282264909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n-            $table->enum('overseas');\n+            $table->enum('overseas',[0,1]);\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282272219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n-            $table->enum('overseas',[0,1]);\n+            $table->enum('overseas',[0,1])->default('nulll');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282279685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n-            $table->enum('overseas',[0,1])->default('nulll');\n+            $table->enum('overseas',[0,1])->default(null);\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666282290231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n+            $table->softDeletes()\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1666282145008,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('cities', function (Blueprint $table) {\n            $table->id();\n            $table->string()\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('cities');\n    }\n};\n"
+        }
+    ]
+}

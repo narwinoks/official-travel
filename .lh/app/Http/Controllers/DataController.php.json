@@ -1,0 +1,74 @@
+{
+    "sourceFile": "app/Http/Controllers/DataController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1666282482833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666282590517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class DataController extends Controller\n {\n-    public function city\n+    public function city(){\n+        $data=\n+    }\n }\n"
+                },
+                {
+                    "date": 1666282596043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\City;\n use Illuminate\\Http\\Request;\n \n class DataController extends Controller\n {\n     public function city(){\n-        $data=\n+        $data=City::all()\n     }\n }\n"
+                },
+                {
+                    "date": 1666282703695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,8 @@\n \n class DataController extends Controller\n {\n     public function city(){\n-        $data=City::all()\n+        $city=City::all();\n+\n     }\n }\n"
+                },
+                {
+                    "date": 1666282712091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n class DataController extends Controller\n {\n     public function city(){\n-        $city=City::all();\n+        $citys=City::all();\n+        foreach($city as $city\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666282717895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n class DataController extends Controller\n {\n     public function city(){\n         $citys=City::all();\n-        foreach($city as $city\n+        foreach($citys as $city)\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666282725088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,11 @@\n class DataController extends Controller\n {\n     public function city(){\n         $citys=City::all();\n-        foreach($citys as $city)\n+        $data=[]\n+        foreach($citys as $city){\n \n+        }\n+\n     }\n }\n"
+                },
+                {
+                    "date": 1666282862444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,11 @@\n class DataController extends Controller\n {\n     public function city(){\n         $citys=City::all();\n-        $data=[]\n+        $data=[];\n         foreach($citys as $city){\n+            \n \n         }\n \n     }\n"
+                },
+                {
+                    "date": 1666282876130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n     public function city(){\n         $citys=City::all();\n         $data=[];\n         foreach($citys as $city){\n-            \n+            $id=$city->id;\n+            $city\n \n         }\n \n     }\n"
+                },
+                {
+                    "date": 1666282883057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         $citys=City::all();\n         $data=[];\n         foreach($citys as $city){\n             $id=$city->id;\n-            $city\n+            $city=$city\n \n         }\n \n     }\n"
+                },
+                {
+                    "date": 1666282888534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n         $citys=City::all();\n         $data=[];\n         foreach($citys as $city){\n             $id=$city->id;\n-            $city=$city\n+            $city=$city->city;\n+            \n \n         }\n \n     }\n"
+                },
+                {
+                    "date": 1666282894753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n         $citys=City::all();\n         $data=[];\n         foreach($citys as $city){\n             $id=$city->id;\n-            $city=$city->city;\n-            \n+            $city_name=$city->city;\n \n+\n         }\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666282905575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n         $data=[];\n         foreach($citys as $city){\n             $id=$city->id;\n             $city_name=$city->city;\n+            $provinces\n \n \n         }\n \n"
+                },
+                {
+                    "date": 1666282911331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         $data=[];\n         foreach($citys as $city){\n             $id=$city->id;\n             $city_name=$city->city;\n-            $provinces= $provinces->provinces\n+            $provinces= $provinces->provinces;\n \n \n         }\n \n"
+                },
+                {
+                    "date": 1666284876978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n             $data[]=[\n                 'id'=>$id,\n                 'city'=>$city_name,\n                 'provinces'=>$provinces,\n-                'latitude' =>\n+                'latitude' =>$\n                 'island'=>$island,\n                 'overseas'=>$overseas,\n                 'action' =>''\n             ];\n"
+                }
+            ],
+            "date": 1666282482833,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass DataController extends Controller\n{\n    public function city\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "resources/views/templates/footer.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1666281560976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666284154716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,8 @@\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n   <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n+  st\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666284184210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n-  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n-  st\n+  @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666284231873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n \t\n \t\t</div>\n \t</div>\n \n+    <script src=\"{{ asset('jquery-3.6.0.js') }}\"></script>\n+\n \t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- plugin js for this page -->\n@@ -19,8 +21,9 @@\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n+  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666284257495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t\n \t\t</div>\n \t</div>\n \n-    <script src=\"{{ asset('jquery-3.6.0.js') }}\"></script>\n+    <script src=\"{{ asset('assets/jquery-3.6.0.js') }}\"></script>\n \n \t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n \t<!-- endinject -->\n"
+                },
+                {
+                    "date": 1666284526372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n \t\t</div>\n \t</div>\n \n     <script src=\"{{ asset('assets/jquery-3.6.0.js') }}\"></script>\n-\n \t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- plugin js for this page -->\n"
+                },
+                {
+                    "date": 1666284574663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- plugin js for this page -->\n-  <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n+  {{-- <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script> --}}\n   <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n \t<!-- end plugin js for this page -->\n \t<!-- inject:js -->\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n"
+                },
+                {
+                    "date": 1666284591841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- plugin js for this page -->\n-  {{-- <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script> --}}\n+  <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n   <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n \t<!-- end plugin js for this page -->\n \t<!-- inject:js -->\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n"
+                },
+                {
+                    "date": 1666285273198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n-  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n+  {{-- <script src=\"{{ asset('assets/js/data-table.js') }}\"></script> --}}\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666285315530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n-  {{-- <script src=\"{{ asset('assets/js/data-table.js') }}\"></script> --}}\n+  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1666281560976,
+            "name": "Commit-0",
+            "content": "\t\t<!-- partial:../../partials/_footer.html -->\n\t\t\t<footer class=\"footer d-flex flex-column flex-md-row align-items-center justify-content-between\">\n\t\t\t\t<p class=\"text-muted text-center text-md-left\">Copyright © 2020 <a href=\"https://www.nobleui.com\" target=\"_blank\">NobleUI</a>. All rights reserved</p>\n\t\t\t\t<p class=\"text-muted text-center text-md-left mb-0 d-none d-md-block\">Handcrafted With <i class=\"mb-1 text-primary ml-1 icon-small\" data-feather=\"heart\"></i></p>\n\t\t\t</footer>\n\t\t\t<!-- partial -->\n\t\n\t\t</div>\n\t</div>\n\n\t<!-- core:js -->\n\t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n\t<!-- endinject -->\n  <!-- plugin js for this page -->\n  <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n  <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n\t<!-- end plugin js for this page -->\n\t<!-- inject:js -->\n\t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n\t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n\t<!-- endinject -->\n  <!-- custom js for this page -->\n  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n\t<!-- end custom js for this page -->\n</body>\n</html>"
+        }
+    ]
+}

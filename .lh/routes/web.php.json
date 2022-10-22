@@ -1,0 +1,102 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1666276186350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666276192906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n \n+use App\\Http\\Controllers\\AuthController;\n use Illuminate\\Support\\Facades\\Route;\n \n /*\n |--------------------------------------------------------------------------\n@@ -16,5 +17,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/user', auth\n+Route::get('/user', AuthController::class,'index');\n"
+                },
+                {
+                    "date": 1666276201665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/user', AuthController::class,'index');\n+Route::get('/login', AuthController::class,'login');\n"
+                },
+                {
+                    "date": 1666276294305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/login', AuthController::class,'login');\n+Route::get('/login',[ AuthController::class,'login');\n"
+                },
+                {
+                    "date": 1666276499334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/login',[ AuthController::class,'login');\n+Route::get('/login',[ AuthController::class,'Login']);\n"
+                },
+                {
+                    "date": 1666276924995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,4 +18,5 @@\n     return view('welcome');\n });\n \n Route::get('/login',[ AuthController::class,'Login']);\n+Route::get('/login',[ AuthController::class,'Login']);\n"
+                },
+                {
+                    "date": 1666276941076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/login',[ AuthController::class,'Login']);\n-Route::get('/login',[ AuthController::class,'Login']);\n+Route::get('/login',[ AuthController::class,'Login'])->;\n+Route::post('/login',[ AuthController::class,'Login']);\n"
+                },
+                {
+                    "date": 1666276949332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/login',[ AuthController::class,'Login'])->;\n+Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class,'Login']);\n"
+                },
+                {
+                    "date": 1666276954565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,5 @@\n     return view('welcome');\n });\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n-Route::post('/login',[ AuthController::class,'Login']);\n+Route::post('/login',[ AuthController::class,'Login'])->name('login');\n"
+                },
+                {
+                    "date": 1666277242904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,5 @@\n     return view('welcome');\n });\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n-Route::post('/login',[ AuthController::class,'Login'])->name('login');\n+Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n"
+                },
+                {
+                    "date": 1666281063961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,4 +19,5 @@\n });\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n+R\n"
+                },
+                {
+                    "date": 1666281070395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,5 @@\n });\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n-R\n+Route::resource('', UserController::class);\n"
+                },
+                {
+                    "date": 1666281076255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,5 @@\n });\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n-Route::resource('', UserController::class);\n+Route::resource('city', C::class);\n"
+                },
+                {
+                    "date": 1666283192692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n \n use App\\Http\\Controllers\\AuthController;\n+use App\\Http\\Controllers\\CityController;\n use Illuminate\\Support\\Facades\\Route;\n \n /*\n |--------------------------------------------------------------------------\n@@ -19,5 +20,6 @@\n });\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n-Route::resource('city', C::class);\n+Route::resource('city', CityController::class);\n+Route::controller('users', 'UserController');\n"
+                },
+                {
+                    "date": 1666283200626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,5 @@\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n-Route::controller('users', 'UserController');\n+Route::controller('data', ');\n"
+                },
+                {
+                    "date": 1666283205927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,5 @@\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n-Route::controller('data', ');\n+Route::controller('data', Datac);\n"
+                },
+                {
+                    "date": 1666283213968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n use App\\Http\\Controllers\\AuthController;\n use App\\Http\\Controllers\\CityController;\n+use App\\Http\\Controllers\\DataController;\n use Illuminate\\Support\\Facades\\Route;\n \n /*\n |--------------------------------------------------------------------------\n@@ -21,5 +22,5 @@\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n-Route::controller('data', Datac);\n+Route::controller('data', DataController::class)->group(fun);\n"
+                },
+                {
+                    "date": 1666283219088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,7 @@\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n-Route::controller('data', DataController::class)->group(fun);\n+Route::controller('data', DataController::class)->group(function(\n+    \n+));\n"
+                },
+                {
+                    "date": 1666283225632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n \n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n-Route::controller('data', DataController::class)->group(function(\n-    \n-));\n+Route::controller('data', DataController::class)->group(function(){\n+    R\n+});\n"
+                },
+                {
+                    "date": 1666283232002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n Route::controller('data', DataController::class)->group(function(){\n-    R\n+    Route::get('/')\n });\n"
+                },
+                {
+                    "date": 1666283240326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n Route::controller('data', DataController::class)->group(function(){\n-    Route::get('/citys')\n+    Route::get('/city')\n });\n"
+                },
+                {
+                    "date": 1666283248079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n Route::get('/login',[ AuthController::class,'Login'])->name('login');\n Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');\n Route::resource('city', CityController::class);\n Route::controller('data', DataController::class)->group(function(){\n-    Route::get('/city','city')->n\n+    Route::get('/city','city')->na\n });\n"
+                }
+            ],
+            "date": 1666276186350,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Route;\n\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider within a group which\n| contains the \"web\" middleware group. Now create something great!\n|\n*/\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::get('/user', auth\n"
+        }
+    ]
+}
