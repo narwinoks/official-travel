@@ -20,8 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login',[ AuthController::class,'Login'])->name('login');
-Route::post('/login',[ AuthController::class, 'ProcessLogin'])->name('login');
+Route::controller(AuthController::class)->group(function(){
+    Route::get('/login', 'login')->name('login');
+    Route::post('/login', 'ProcessLogin')->name('login');
+});
 Route::resource('city', CityController::class);
 Route::controller(DataController::class)->group(function(){
     Route::prefix('data')->group(function(){

@@ -11,21 +11,28 @@ class DataController extends Controller
         $citys=City::all();
         $data=[];
         foreach($citys as $city){
+
             $id=$city->id;
             $city_name=$city->city;
-            $provinces= $city->provinces;
+            $provinces= $city->province;
             $latitude=$city->latitude;
-            $logitute =$city->logitute;
+            $logitute =$city->longitude;
             $island=$city->island;
-            $action = '<a href="JavaScript " class="btn btn-primary btn-sm mx-1">Show</a>';
-            $action2 = '<a href="JavaScript " class="btn btn-danger btn-sm">Delete</a>';
-            $overseas=isset($city->overseas)? 'Ya' : 'Tidak';
+            $url=route('city.edit',$id);
+            $action = '<a  href="'.$url.'" data-original-title="Edit" class="btn btn-primary btn-sm mx-1">Edit</a>';
+            $action2 = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$city->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteData">Delete</a>';
+           if ($city ->overseas ==1) {
+               $overseas ='YA';
+            }else{
+               $overseas ='Tidak';
+
+           }
             $data[]=[
                 'id'=>$id,
                 'city'=>$city_name,
                 'provinces'=>$provinces,
                 'latitude' =>$latitude,
-                'logitute'=>$logitute,
+                'longitute'=>$logitute,
                 'island'=>$island,
                 'overseas'=>$overseas,
                 'action' =>$action . $action2

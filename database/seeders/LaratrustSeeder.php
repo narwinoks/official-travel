@@ -60,7 +60,7 @@ class LaratrustSeeder extends Seeder
             // Attach all permissions to the role
             $role->permissions()->sync($permissions);
 
-            if (true) {
+         if(Config::get('laratrust_seeder.create_users')) {
                 $this->command->info("Creating '{$key}' user");
                 // Create default user for each role
                 $user = \App\Models\User::create([

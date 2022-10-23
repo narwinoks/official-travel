@@ -17,9 +17,21 @@ class CitySeeder extends Seeder
     {
         $city=City::create([
             'city'=>'solo',
-            'provinces' =>'Jawa Tengah',
+            'province' =>'Jawa Tengah',
+            'latitude'=>'-7.551550953636547',
+            'longitude'=>'110.80856207006029',
             'island'=>'Jawa',
             'overseas'=>'0'
         ]);
+        $city=City::create([
+            'city'=>'bandung',
+            'province' =>'Jawa Barat',
+            'longitude'=>'107.60762330092848',
+            'latitude'=>'-6.887769562651903',
+            'island'=>'Jawa',
+            'overseas'=>'0'
+        ]);
+
+        
     }
 }
