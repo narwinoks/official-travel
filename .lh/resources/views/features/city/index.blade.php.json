@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 50,
+            "activePatchIndex": 68,
             "patches": [
                 {
                     "date": 1666281277143,
@@ -208,6 +208,78 @@
                 {
                     "date": 1666285337330,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n      <!-- Script -->\n     <script type=\"text/javascript\">\n     $(document).ready(function(){\n       // DataTable\n-      $('#dataTableExasmple').DataTable({\n+      $('#dataTableExample').DataTable({\n          processing: true,\n          serverSide: true,\n          ajax: \"{{route('data.city')}}\",\n          columns: [\n"
+                },
+                {
+                    "date": 1666461922197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     $(document).ready(function(){\n       // DataTable\n       $('#dataTableExample').DataTable({\n          processing: true,\n-         serverSide: true,\n+        //  serverSide: true,\n          ajax: \"{{route('data.city')}}\",\n          columns: [\n             { data: 'id' },\n             { data: 'city' },\n"
+                },
+                {
+                    "date": 1666462125615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">Data Table</h6>\n                 <p class=\"card-description\">Read the <a href=\"https://datatables.net/\" target=\"_blank\"> Official DataTables Documentation </a>for a full list of instructions and other options.</p>\n-                <div class=\"table-responsive\">\n+                <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n                         <th>No</th>\n"
+                },
+                {
+                    "date": 1666491879366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,11 @@\n                         <th>No</th>\n                         <th>Nama Kota</th>\n                         <th>Provinsi</th>\n                         <th>Pulau</th>\n-                        <th>Luar Negri</th>\n                         <th>Latitude</th>\n                         <th>Logtitude</th>\n+                        <th>Luar Negri</th>\n                         <th>Aksi</th>\n                       </tr>\n                     </thead>\n                     <tbody>\n"
+                },
+                {
+                    "date": 1666492050509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,10 @@\n             { data: 'id' },\n             { data: 'city' },\n             { data: 'provinces' },\n             { data: 'island' },\n+            { data: 'logi' },\n             { data: 'latitude' },\n-            { data: 'latitude' },\n             { data: 'overseas' },\n             { data: 'action' },\n          ]\n       });\n"
+                },
+                {
+                    "date": 1666492059517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n             { data: 'id' },\n             { data: 'city' },\n             { data: 'provinces' },\n             { data: 'island' },\n-            { data: 'logi' },\n+            { data: 'longitude' },\n             { data: 'latitude' },\n             { data: 'overseas' },\n             { data: 'action' },\n          ]\n"
+                },
+                {
+                    "date": 1666492160682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n             { data: 'id' },\n             { data: 'city' },\n             { data: 'provinces' },\n             { data: 'island' },\n-            { data: 'longitude' },\n+            { data: 'longitute' },\n             { data: 'latitude' },\n             { data: 'overseas' },\n             { data: 'action' },\n          ]\n"
+                },
+                {
+                    "date": 1666492171654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,10 @@\n             { data: 'id' },\n             { data: 'city' },\n             { data: 'provinces' },\n             { data: 'island' },\n+            { data: 'latitude' },\n             { data: 'longitute' },\n-            { data: 'latitude' },\n             { data: 'overseas' },\n             { data: 'action' },\n          ]\n       });\n"
+                },
+                {
+                    "date": 1666492194982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n                         <th>Aksi</th>\n                       </tr>\n                     </thead>\n                     <tbody>\n-                      \n                     </tbody>\n                   </table>\n                 </div>\n               </div>\n"
+                },
+                {
+                    "date": 1666492204164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n @section('content')\n     \t\t<div class=\"col-md-12 grid-margin stretch-card\">\n             <div class=\"card\">\n               <div class=\"card-body\">\n-                <h6 class=\"card-title\">Data Table</h6>\n+                <h6 class=\"card-title\">List Maste City</h6>\n                 <p class=\"card-description\">Read the <a href=\"https://datatables.net/\" target=\"_blank\"> Official DataTables Documentation </a>for a full list of instructions and other options.</p>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n"
+                },
+                {
+                    "date": 1666492223059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     \t\t<div class=\"col-md-12 grid-margin stretch-card\">\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n-                <p class=\"card-description\">Read the <a href=\"https://datatables.net/\" target=\"_blank\"> Official DataTables Documentation </a>for a full list of instructions and other options.</p>\n+                <p class=\"card-description\">Enter Your M</p>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666492231816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     \t\t<div class=\"col-md-12 grid-margin stretch-card\">\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n-                <p class=\"card-description\">Enter Your M</p>\n+                <p class=\"card-description\">Enter Your Master Data From City</p>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666492247292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n               </div>\n             </div>\n \t\t\t\t\t</div>\t\n @endsection\n-\n @push('scripts')\n      <!-- Script -->\n     <script type=\"text/javascript\">\n     $(document).ready(function(){\n"
+                },
+                {
+                    "date": 1666492284985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n                 <p class=\"card-description\">Enter Your Master Data From City</p>\n+                \n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666492428103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n                 <p class=\"card-description\">Enter Your Master Data From City</p>\n-                \n+                <button type=\"button\" class=\"btn btn-outline-primary\"></button>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666492436543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n                 <p class=\"card-description\">Enter Your Master Data From City</p>\n-                <button type=\"button\" class=\"btn btn-outline-primary\"></button>\n+                <a href=\"\" class=\"btn btn-\"></a>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666492443144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n                 <p class=\"card-description\">Enter Your Master Data From City</p>\n-                <a href=\"\" class=\"btn btn-\"></a>\n+                <a href=\"\" class=\"btn btn-primary\"></a>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666492472564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             <div class=\"card\">\n               <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Maste City</h6>\n                 <p class=\"card-description\">Enter Your Master Data From City</p>\n-                <a href=\"\" class=\"btn btn-primary mx\">Add Data</a>\n+                <a href=\"\" class=\"btn btn-primary m\">Add Data</a>\n                 <div class=\"table\">\n                   <table id=\"dataTableExample\" class=\"table\">\n                     <thead>\n                       <tr>\n"
+                },
+                {
+                    "date": 1666500441358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n \n                 $.ajax({\n                     type: \"DELETE\",\n                     Method: 'DELETE',\n-                    url: \"{{ route('c') }}\",\n+                    url: \"{{ route('city.destroy') }}\",\n                     success: function(data) {\n                         table.draw();\n                     },\n                     error: function(data) {\n"
                 }
             ],
             "date": 1666281277143,

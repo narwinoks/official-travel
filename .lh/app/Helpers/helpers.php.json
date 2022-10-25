@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/Helpers/helpers.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1666631892245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1666631892245,
+            "name": "Commit-0",
+            "content": "<?php \n\nif (!function_exists('GetDifferenceDate')) {\n    function GetDifferenceDate($date1,$date2)\n    {\n        $date = new DateTime($date1);\n        $date3 = new DateTime($date2);\n        $interval = $date->diff($date3);\n        return $interval->days .' ' .'Hari';\n    }\n}\n\n\n?>"
+        }
+    ]
+}

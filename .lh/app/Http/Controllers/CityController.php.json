@@ -3,11 +3,55 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1666281098090,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666494279247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        //\n+        return view('features.city.index');\n     }\n \n     /**\n      * Store a newly created resource in storage.\n"
+                },
+                {
+                    "date": 1666494984329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        return view('features.city.index');\n+        return view('features.city.create');\n     }\n \n     /**\n      * Store a newly created resource in storage.\n@@ -34,9 +34,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function store(Request $request)\n     {\n-        //\n+        \n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666495055618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,12 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function store(Request $request)\n     {\n-        \n+        $validated = $request->validate([\n+            'title' => 'required|unique:posts|max:255',\n+            'body' => 'required',\n+        ]);\n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666495084734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n      */\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n-            'title' => 'required|unique:posts|max:255',\n+            'city' => 'required|unique:posts|max:255',\n             'body' => 'required',\n         ]);\n     }\n \n"
+                },
+                {
+                    "date": 1666495100071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n      */\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n-            'city' => 'required|unique:posts|max:255',\n+            'city' => 'required|unique:cities|max:255',\n             'body' => 'required',\n         ]);\n     }\n \n"
+                },
+                {
+                    "date": 1666495151321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n             'city' => 'required|unique:cities|max:255',\n-            'body' => 'required',\n+            'longitude' => 'required',\n         ]);\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666495259350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n             'city' => 'required|unique:cities|max:255',\n-            'longitude' => 'required',\n+            'longitude' => ''required','regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/'',\n         ]);\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666495266479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n             'city' => 'required|unique:cities|max:255',\n-            'longitude' => ''required','regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/'',\n+            'longitude' => ''required',regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/',\n         ]);\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666495271784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n             'city' => 'required|unique:cities|max:255',\n-            'longitude' => ''required',regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/',\n+            'longitude' => ''required,regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/',\n         ]);\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666495279357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     {\n         $validated = $request->validate([\n             'city' => 'required|unique:cities|max:255',\n             'longitude' => 'required,regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/',\n-            ''\n+            'l'\n         ]);\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666497026801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     public function store(Request $request)\n     {\n         $validated = $request->validate([\n             'city' => 'required|unique:cities|max:255',\n-            'longitude' => ['required|regex:/^[-]?(([0-8]?[0-9])\\.(\\d+))|(90(\\.0+)?);[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/',\n+            'longitude' => ['required|regex:/^[-]?(([0-8]?[0-9])\\.(\\d+))|(90(\\.0+)?);[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\\.(\\d+))|180(\\.0+)?)$/'],\n             'latitude'=>'required|regex:/^[-]?(([0-8]?[0-9])\\.(\\d+))|(90(\\.0+)?)$/'\n         ],[\n             'longitude.regex' => 'Latitude value appears to be incorrect format.',\n             'longitude.regex' => 'Longitude value appears to be incorrect format.'\n"
                 }
             ],
             "date": 1666281098090,

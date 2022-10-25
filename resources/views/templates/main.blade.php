@@ -12,9 +12,8 @@
         <div class="col-md-12 col-sm-11">
             @include('templates.alert')
         </div>
-        <div class="col-md-12 grid-margin stretch-card">
             @yield('content')
-        </div>
+        {{-- </div> --}}
     </div>
 </div>
 @include('templates.footer')

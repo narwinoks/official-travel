@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\SubmissionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,10 @@ Route::resource('city', CityController::class);
 Route::controller(DataController::class)->group(function(){
     Route::prefix('data')->group(function(){
         Route::get('/city','city')->name('data.city');
+        Route::get('/newsubmission','NewSubmission')->name('data.newsubmission');
+        Route::get('/allsubmission','HistorySubmission')->name('data.allsubmission');
     });
+});
+Route::controller(SubmissionsController::class)->prefix('submissions')->group(function(){
+    Route::get('/','index')->name('submission.index');
 });

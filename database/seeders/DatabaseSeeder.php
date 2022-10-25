@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call([LaratrustSeeder::class,CitySeeder::class]);
+        $this->call([LaratrustSeeder::class,CitySeeder::class,SubmissionSeeder::class]);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

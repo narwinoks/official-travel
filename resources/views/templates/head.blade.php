@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/demo_1/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    @stack('styles')
 </head>
 
 <body>

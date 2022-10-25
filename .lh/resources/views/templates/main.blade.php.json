@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 27,
             "patches": [
                 {
                     "date": 1666281604284,
@@ -68,6 +68,54 @@
                 {
                     "date": 1666281798121,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n @include('templates.head')\n-@include('templates.sed')\n+@include('templates.sedibar')\n+@include('templates.navbar')\n \t<div class=\"page-content\">\n \n \t\t\t\t<nav class=\"page-breadcrumb\">\n \t\t\t\t\t<ol class=\"breadcrumb\">\n"
+                },
+                {
+                    "date": 1666496871477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \t\t\t\t\t</ol>\n \t\t\t\t</nav>\n \t\t\t\t<div class=\"row\">\n                     <div class=\"col-md-12 grid-margin stretch-card\">\n+\t\t\t\t\t\t\n                         @yield('content')\n                     </div>\n \t\t\t</div>\n     </div>\n"
+                },
+                {
+                    "date": 1666496880003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,11 @@\n \t\t\t\t\t</ol>\n \t\t\t\t</nav>\n \t\t\t\t<div class=\"row\">\n                     <div class=\"col-md-12 grid-margin stretch-card\">\n-\t\t\t\t\t\t\n+\t\t\t\t\t\t<div class=\"row\">\n+\t\t\t\t\t\t\t.col-12\n+\t\t\t\t\t\t</div>\n                         @yield('content')\n                     </div>\n \t\t\t</div>\n     </div>\n"
+                },
+                {
+                    "date": 1666496886893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n \t\t\t\t</nav>\n \t\t\t\t<div class=\"row\">\n                     <div class=\"col-md-12 grid-margin stretch-card\">\n \t\t\t\t\t\t<div class=\"row\">\n-\t\t\t\t\t\t\t.col-12\n+\t\t\t\t\t\t\t<div class=\"col-md-12\">\n+\t\t\t\t\t\t\t\t\n+\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t</div>\n                         @yield('content')\n                     </div>\n \t\t\t</div>\n"
+                },
+                {
+                    "date": 1666496894251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t\t\t\t</nav>\n \t\t\t\t<div class=\"row\">\n                     <div class=\"col-md-12 grid-margin stretch-card\">\n \t\t\t\t\t\t<div class=\"row\">\n-\t\t\t\t\t\t\t<div class=\"col-md-12\">\n+\t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-11\">\n \t\t\t\t\t\t\t\t\n \t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t</div>\n                         @yield('content')\n"
+                },
+                {
+                    "date": 1666496910937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t\t\t\t<div class=\"row\">\n                     <div class=\"col-md-12 grid-margin stretch-card\">\n \t\t\t\t\t\t<div class=\"row\">\n \t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-11\">\n-\t\t\t\t\t\t\t\t\n+\t\t\t\t\t\t\t\t@include('templates.alert.alert')\n \t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t</div>\n                         @yield('content')\n                     </div>\n"
+                },
+                {
+                    "date": 1666496916035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,23 @@\n @include('templates.head')\n @include('templates.sedibar')\n @include('templates.navbar')\n-\t<div class=\"page-content\">\n+<div class=\"page-content\">\n \n-\t\t\t\t<nav class=\"page-breadcrumb\">\n-\t\t\t\t\t<ol class=\"breadcrumb\">\n-\t\t\t\t\t\t<li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n-\t\t\t\t\t\t<li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n-\t\t\t\t\t</ol>\n-\t\t\t\t</nav>\n-\t\t\t\t<div class=\"row\">\n-                    <div class=\"col-md-12 grid-margin stretch-card\">\n-\t\t\t\t\t\t<div class=\"row\">\n-\t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-11\">\n-\t\t\t\t\t\t\t\t@include('templates.alert.alert')\n-\t\t\t\t\t\t\t</div>\n-\t\t\t\t\t\t</div>\n-                        @yield('content')\n-                    </div>\n-\t\t\t</div>\n+    <nav class=\"page-breadcrumb\">\n+        <ol class=\"breadcrumb\">\n\\ No newline at end of file\n+            <li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n+            <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n+        </ol>\n+    </nav>\n+    <div class=\"row\">\n+        <div class=\"col-md-12 grid-margin stretch-card\">\n+            <div class=\"row\">\n+                <div class=\"col-md-12 col-sm-11\">\n+                    @include('templates.alert');\n+                </div>\n+            </div>\n+            @yield('content')\n+        </div>\n     </div>\n-    @include('templates.footer')\n-    \n+</div>\n+@include('templates.footer')\n"
+                },
+                {
+                    "date": 1666497995370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n @include('templates.head')\n @include('templates.sedibar')\n @include('templates.navbar')\n <div class=\"page-content\">\n-\n     <nav class=\"page-breadcrumb\">\n         <ol class=\"breadcrumb\">\n             <li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n             <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n@@ -12,12 +11,12 @@\n     <div class=\"row\">\n         <div class=\"col-md-12 grid-margin stretch-card\">\n             <div class=\"row\">\n                 <div class=\"col-md-12 col-sm-11\">\n-                    @include('templates.alert');\n+                    @include('templates.alert')\n                 </div>\n             </div>\n             @yield('content')\n         </div>\n     </div>\n </div>\n\\ No newline at end of file\n-@include('templates.footer')\n+@include('templates.footer')\n"
+                },
+                {
+                    "date": 1666498000737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n             <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n         </ol>\n     </nav>\n     <div class=\"row\">\n+        <div class=\"col-md-12 col-sm-11\">\n+            @include('templates.alert')\n+        </div>\n         <div class=\"col-md-12 grid-margin stretch-card\">\n             <div class=\"row\">\n-                <div class=\"col-md-12 col-sm-11\">\n-                    @include('templates.alert')\n-                </div>\n             </div>\n             @yield('content')\n         </div>\n\\ No newline at end of file\n     </div>\n </div>\n-@include('templates.footer')\n+@include('templates.footer')\n"
+                },
+                {
+                    "date": 1666498255929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,9 @@\n         <div class=\"col-md-12 col-sm-11\">\n             @include('templates.alert')\n         </div>\n         <div class=\"col-md-12 grid-margin stretch-card\">\n-            <div class=\"row\">\n-            </div>\n             @yield('content')\n         </div>\n     </div>\n </div>\n-@include('templates.footer')\n\\ No newline at end of file\n+@include('templates.footer')\n"
+                },
+                {
+                    "date": 1666521717427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <div class=\"row\">\n         <div class=\"col-md-12 col-sm-11\">\n             @include('templates.alert')\n         </div>\n-        <div class=\"col-md-12 grid-margin stretch-card\">\n+        {{-- <div class=\"col-md-12 grid-margin stretch-card\"> --}}\n             @yield('content')\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1666521743964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,8 @@\n     <div class=\"row\">\n         <div class=\"col-md-12 col-sm-11\">\n             @include('templates.alert')\n         </div>\n-        {{-- <div class=\"col-md-12 grid-margin stretch-card\"> --}}\n-            @yield('content')\n-        </div>\n+        @yield('content')\n     </div>\n </div>\n @include('templates.footer')\n"
+                },
+                {
+                    "date": 1666521757316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n     <div class=\"row\">\n         <div class=\"col-md-12 col-sm-11\">\n             @include('templates.alert')\n         </div>\n-        @yield('content')\n+        {{-- <div class=\"col-md-12 grid-margin stretch-card\"> --}}\n+            @yield('content')\n+        {{-- </div> --}}\n     </div>\n </div>\n @include('templates.footer')\n"
                 }
             ],
             "date": 1666281604284,

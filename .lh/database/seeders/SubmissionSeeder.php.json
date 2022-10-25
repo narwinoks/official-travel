@@ -1,0 +1,46 @@
+{
+    "sourceFile": "database/seeders/SubmissionSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1666502866284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666505461991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $data=\n+        $data=Subs\n     }\n }\n"
+                },
+                {
+                    "date": 1666505471656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $data=Subs\n+        $data=Subsm\n     }\n }\n"
+                },
+                {
+                    "date": 1666505479034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace Database\\Seeders;\n \n+use App\\Models\\Submission;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n \n class SubmissionSeeder extends Seeder\n@@ -13,7 +14,7 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $data=Subsm\n+        $data=Submission::create\n     }\n }\n"
+                },
+                {
+                    "date": 1666505485254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $data=Submission::create\n+        $data=Submission::create([\n+            'from'\n+        ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666505495461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n      */\n     public function run()\n     {\n         $data=Submission::create([\n-            'from'\n+            'from_city_id'=>1,\n+            'to_city_id'=>\n         ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666505504888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n     {\n         $data=Submission::create([\n             'from_city_id'=>1,\n             'to_city_id'=>2,\n-            'from'\n+            'from_'\n         ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666505643297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,8 @@\n             'from_longitude'=>'110.80856207006029',\n             'to_logitude'=>'107.60762330092848',\n             'from_latitude'=>'7.551550953636547',\n             'to_latitude'=>'6.887769562651903',\n-            'start_at'=>date('Y/m/d') \n+            'start_at'=>date('Y/m/d') +\n         ]);\n     }\n }\n"
+                }
+            ],
+            "date": 1666502866284,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass SubmissionSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $data=\n    }\n}\n"
+        }
+    ]
+}

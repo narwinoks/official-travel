@@ -1,0 +1,142 @@
+{
+    "sourceFile": "database/migrations/2022_10_22_180313_create_submissions_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1666502464191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666502472172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->string()\n+            $table\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502517865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table\n+            $table->fore\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502524655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n \n+use App\\Models\\City;\n use Illuminate\\Database\\Migrations\\Migration;\n use Illuminate\\Database\\Schema\\Blueprint;\n use Illuminate\\Support\\Facades\\Schema;\n \n@@ -14,9 +15,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->fore\n+            $table->foreignIdFor(City::class)\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502536220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->foreignIdFor(City::class)\n+            $table->foreignIdFor();\n+            $table->foreignIdFor(City::class);\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502543641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <?php\n \n-use App\\Models\\City;\n use Illuminate\\Database\\Migrations\\Migration;\n use Illuminate\\Database\\Schema\\Blueprint;\n use Illuminate\\Support\\Facades\\Schema;\n \n@@ -15,10 +14,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->foreignIdFor();\n-            $table->foreignIdFor(City::class);\n+            $table->foreignId('form-')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502550085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->foreignId('form-')\n+            $table->foreignId('form_city_id')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502555970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->foreignId('form_city_id')\n+            $table->foreignId('form_city_id');\n+            $table->foreignId('to_city_id');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502564166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n+            $table->foreignId('from_city_id');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502575541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n-            $table->foreignId('from_city_id');\n+            $table->string('')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502581179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n-            $table->string('')\n+            $table->string('from_log')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502587043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n-            $table->string('from_log')\n+            $table->string('from_logitude')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502593922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n-            $table->string('from_logitude')\n+            $table->string('from_logitude');\n+            $table->string('to_logitude');\n+            $table->string('to_logitude');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502602960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n-            $table->string('to_logitude');\n+            $table->string('from_latitude');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502728934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n+            \n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502734898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n+            $table->string('to_latitude');\n             \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1666502745275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n-            \n+            $table->date('start')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502750861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n-            $table->date('start')\n+            $table->date('start_at');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666502763682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,10 @@\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n+            $table->date('end_at');\n+            $table->string('description');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666517434164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n+            \n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n"
+                },
+                {
+                    "date": 1666517444817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n \n+use App\\Models\\User;\n use Illuminate\\Database\\Migrations\\Migration;\n use Illuminate\\Database\\Schema\\Blueprint;\n use Illuminate\\Support\\Facades\\Schema;\n \n@@ -14,9 +15,9 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->foreignIdFor(User::class)\n             $table->foreignId('form_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n"
+                },
+                {
+                    "date": 1666517461829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n     public function up()\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n-            $table->foreignIdFor(User::class)\n-            $table->foreignId('form_city_id');\n+            $table->foreignIdFor(User::class);\n+            $table->foreignId('frm_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n"
+                },
+                {
+                    "date": 1666517474344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         Schema::create('submissions', function (Blueprint $table) {\n             $table->id();\n             $table->foreignIdFor(User::class);\n-            $table->foreignId('frm_city_id');\n+            $table->foreignId('from_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_logitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n"
+                },
+                {
+                    "date": 1666517494722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->id();\n             $table->foreignIdFor(User::class);\n             $table->foreignId('from_city_id');\n             $table->foreignId('to_city_id');\n-            $table->string('from_logitude');\n+            $table->string('from_longitude');\n             $table->string('to_logitude');\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n"
+                },
+                {
+                    "date": 1666517506025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             $table->foreignIdFor(User::class);\n             $table->foreignId('from_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_longitude');\n-            $table->string('to_logitude');\n+            $table->string('to_longitude');\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n"
+                },
+                {
+                    "date": 1666517548660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             $table->foreignIdFor(User::class);\n             $table->foreignId('from_city_id');\n             $table->foreignId('to_city_id');\n             $table->string('from_longitude');\n-            $table->string('to_longitude');\n+            $table->string('to_longtitude');\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n"
+                },
+                {
+                    "date": 1666627506786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n+            $table->in\n             $table->string('description');\n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1666627512141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n-            $table->in\n+            $table->integer('status')\n             $table->string('description');\n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1666627520187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,11 @@\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n-            $table->integer('status')\n             $table->string('description');\n+            $table->integer('status');\n+            // 1 approf \n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666627544731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             $table->date('start_at');\n             $table->date('end_at');\n             $table->string('description');\n             $table->integer('status');\n-            // 1 approf \n+            // 1 approf 0 rejection\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666627616465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n             $table->string('description');\n-            $table->integer('status');\n+            $table->integer('status')->def;\n             // 1 approf 0 rejection\n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1666627679775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n             $table->string('description');\n-            $table->integer('status')->def;\n+            $table->integer('status')->nullable();\n             // 1 approf 0 rejection\n             $table->timestamps();\n         });\n     }\n"
+                }
+            ],
+            "date": 1666502464191,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('submissions', function (Blueprint $table) {\n            $table->id();\n            $table->string()\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('submissions');\n    }\n};\n"
+        }
+    ]
+}

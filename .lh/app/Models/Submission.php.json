@@ -1,0 +1,90 @@
+{
+    "sourceFile": "app/Models/Submission.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1666628196085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666628204484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n class Submission extends Model\n {\n     use HasFactory;\n-    $pro\n+    protected $guarded=[]\n }\n"
+                },
+                {
+                    "date": 1666628213983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \n class Submission extends Model\n {\n     use HasFactory;\n-    protected $guarded=[]\n+    protected $guarded=[];\n+    public function F\n }\n"
+                },
+                {
+                    "date": 1666628219195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n class Submission extends Model\n {\n     use HasFactory;\n     protected $guarded=[];\n-    public function F\n+    public function FromCity()\n }\n"
+                },
+                {
+                    "date": 1666628226761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,8 @@\n class Submission extends Model\n {\n     use HasFactory;\n     protected $guarded=[];\n-    public function FromCity()\n+    public function FromCity(){\n+        return $this->belongsTo()\n+    }\n }\n"
+                },
+                {
+                    "date": 1666628232123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n {\n     use HasFactory;\n     protected $guarded=[];\n     public function FromCity(){\n-        return $this->belongsTo()\n+        return $this->belongsTo(City)\n     }\n }\n"
+                },
+                {
+                    "date": 1666628239640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n {\n     use HasFactory;\n     protected $guarded=[];\n     public function FromCity(){\n-        return $this->belongsTo(City)\n+        return $this->belongsTo(City:c)\n     }\n }\n"
+                },
+                {
+                    "date": 1666628245430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n {\n     use HasFactory;\n     protected $guarded=[];\n     public function FromCity(){\n-        return $this->belongsTo(City:c)\n+        return $this->belongsTo(City::class)\n     }\n }\n"
+                },
+                {
+                    "date": 1666628251460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n class Submission extends Model\n {\n     use HasFactory;\n     protected $guarded=[];\n+    \n     public function FromCity(){\n-        return $this->belongsTo(City::class)\n+        return $this->belongsTo(City::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1666628259163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,12 @@\n class Submission extends Model\n {\n     use HasFactory;\n     protected $guarded=[];\n-    \n+\n     public function FromCity(){\n         return $this->belongsTo(City::class);\n     }\n+    public function ToCity(){\n+        return $this->belongsTo(City::class);\n+    }\n }\n"
+                },
+                {
+                    "date": 1666628270889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n     public function FromCity(){\n         return $this->belongsTo(City::class);\n     }\n     public function ToCity(){\n-        return $this->belongsTo(City::class);\n+        return $this->belongsTo(City::class,'');\n     }\n }\n"
+                },
+                {
+                    "date": 1666628278844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n     public function FromCity(){\n         return $this->belongsTo(City::class);\n     }\n     public function ToCity(){\n-        return $this->belongsTo(City::class,'');\n+        return $this->belongsTo(City::class,'to_city_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666628284626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n     use HasFactory;\n     protected $guarded=[];\n \n     public function FromCity(){\n-        return $this->belongsTo(City::class);\n+        return $this->belongsTo(City::class,);\n     }\n     public function ToCity(){\n-        return $this->belongsTo(City::class,'to_city_id');\n+        return $this->belongsTo(City::class,'to_city_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666628297174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     use HasFactory;\n     protected $guarded=[];\n \n     public function FromCity(){\n-        return $this->belongsTo(City::class,);\n+        return $this->belongsTo(City::class,'from');\n     }\n     public function ToCity(){\n         return $this->belongsTo(City::class,'to_city_id','id');\n     }\n"
+                },
+                {
+                    "date": 1666628641244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     use HasFactory;\n     protected $guarded=[];\n \n     public function FromCity(){\n-        return $this->belongsTo(City::class,'from');\n+        return $this->belongsToMany(City::class,'from_city_id');\n     }\n     public function ToCity(){\n         return $this->belongsTo(City::class,'to_city_id','id');\n     }\n"
+                },
+                {
+                    "date": 1666628743980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n     use HasFactory;\n     protected $guarded=[];\n \n     public function FromCity(){\n-        return $this->belongsToMany(City::class,'from_city_id');\n+        return $this->belongsTo(City::class);\n     }\n     public function ToCity(){\n-        return $this->belongsTo(City::class,'to_city_id','id');\n+        return $this->belongsTo(City::class,'to_city_id',);\n     }\n }\n"
+                },
+                {
+                    "date": 1666628752840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n     use HasFactory;\n     protected $guarded=[];\n \n     public function FromCity(){\n-        return $this->belongsTo(City::class);\n+        return $this->belongsToMany(City::class,'from_city_id','id');\n     }\n     public function ToCity(){\n-        return $this->belongsTo(City::class,'to_city_id',);\n+        return $this->belongsTo(City::class,'to_city_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666628922208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n {\n     use HasFactory;\n     protected $guarded=[];\n \n+    \n     public function FromCity(){\n         return $this->belongsToMany(City::class,'from_city_id','id');\n     }\n     public function ToCity(){\n"
+                },
+                {
+                    "date": 1666628928008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n class Submission extends Model\n {\n     use HasFactory;\n     protected $guarded=[];\n-    protec\n+    protected\n \n \n     public function FromCity(){\n         return $this->belongsToMany(City::class,'from_city_id','id');\n"
+                }
+            ],
+            "date": 1666628196085,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Submission extends Model\n{\n    use HasFactory;\n    $pro\n}\n"
+        }
+    ]
+}

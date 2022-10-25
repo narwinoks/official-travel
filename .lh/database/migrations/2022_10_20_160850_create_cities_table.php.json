@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1666282145008,
@@ -52,6 +52,26 @@
                 {
                     "date": 1666282290231,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n             $table->string('city');\n             $table->string('provinces');\n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n+            $table->softDeletes()\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666491501386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,12 @@\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n+            \n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n-            $table->softDeletes()\n+            $table->softDeletes();\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666491508332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n-            \n+            $table->s\n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n             $table->softDeletes();\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1666491525881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n-            $table->s\n+            $table->string('Latitude')\n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n             $table->softDeletes();\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1666491536184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,10 @@\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n             $table->string('provinces');\n-            $table->string('Latitude')\n+            $table->string('latitude');\n+            $table->String('longitude');\n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n             $table->softDeletes();\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1666497809585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('cities', function (Blueprint $table) {\n             $table->id();\n             $table->string('city');\n-            $table->string('provinces');\n+            $table->string('province');\n             $table->string('latitude');\n             $table->String('longitude');\n             $table->String('island');\n             $table->enum('overseas',[0,1])->default(null);\n"
                 }
             ],
             "date": 1666282145008,

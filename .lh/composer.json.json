@@ -1,0 +1,18 @@
+{
+    "sourceFile": "composer.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1666631273859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1666631273859,
+            "name": "Commit-0",
+            "content": "{\n    \"name\": \"laravel/laravel\",\n    \"type\": \"project\",\n    \"description\": \"The Laravel Framework.\",\n    \"keywords\": [\n        \"framework\",\n        \"laravel\"\n    ],\n    \"license\": \"MIT\",\n    \"require\": {\n        \"php\": \"^8.0.2\",\n        \"guzzlehttp/guzzle\": \"^7.2\",\n        \"laravel/framework\": \"^9.19\",\n        \"laravel/sanctum\": \"^3.0\",\n        \"laravel/tinker\": \"^2.7\",\n        \"santigarcor/laratrust\": \"^7.1\"\n    },\n    \"require-dev\": {\n        \"fakerphp/faker\": \"^1.9.1\",\n        \"laravel/pint\": \"^1.0\",\n        \"laravel/sail\": \"^1.0.1\",\n        \"mockery/mockery\": \"^1.4.4\",\n        \"nunomaduro/collision\": \"^6.1\",\n        \"phpunit/phpunit\": \"^9.5.10\",\n        \"spatie/laravel-ignition\": \"^1.0\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"App\\\\\": \"app/\",\n            \"Database\\\\Factories\\\\\": \"database/factories/\",\n            \"Database\\\\Seeders\\\\\": \"database/seeders/\"\n        },\n        \"files\": [\n            \"app/Helpers/helpers.php\"\n        ]\n    },\n    \"autoload-dev\": {\n        \"psr-4\": {\n            \"Tests\\\\\": \"tests/\"\n        }\n    },\n    \"scripts\": {\n        \"post-autoload-dump\": [\n            \"Illuminate\\\\Foundation\\\\ComposerScripts::postAutoloadDump\",\n            \"@php artisan package:discover --ansi\"\n        ],\n        \"post-update-cmd\": [\n            \"@php artisan vendor:publish --tag=laravel-assets --ansi --force\"\n        ],\n        \"post-root-package-install\": [\n            \"@php -r \\\"file_exists('.env') || copy('.env.example', '.env');\\\"\"\n        ],\n        \"post-create-project-cmd\": [\n            \"@php artisan key:generate --ansi\"\n        ]\n    },\n    \"extra\": {\n        \"laravel\": {\n            \"dont-discover\": []\n        }\n    },\n    \"config\": {\n        \"optimize-autoloader\": true,\n        \"preferred-install\": \"dist\",\n        \"sort-packages\": true,\n        \"allow-plugins\": {\n            \"pestphp/pest-plugin\": true\n        }\n    },\n    \"minimum-stability\": \"dev\",\n    \"prefer-stable\": true\n}\n"
+        }
+    ]
+}

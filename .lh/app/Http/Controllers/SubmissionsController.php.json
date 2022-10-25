@@ -1,0 +1,78 @@
+{
+    "sourceFile": "app/Http/Controllers/SubmissionsController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1666518336069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666518346513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class SubmissionsController extends Controller\n {\n     public function index(){\n-        return\n+        return view('feature.submissions');\n     }\n }\n"
+                },
+                {
+                    "date": 1666518352207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class SubmissionsController extends Controller\n {\n     public function index(){\n-        return view('feature.submissions');\n+        return view('feature.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666518360844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class SubmissionsController extends Controller\n {\n     public function index(){\n-        return view('feature.submission.index');\n+        return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666577733347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class SubmissionsController extends Controller\n {\n     public function index(){\n-        return view('features.submission.index');\n+            return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666577777779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class SubmissionsController extends Controller\n {\n     public function index(){\n-            return view('features.submission.index');\n+         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666577784867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n \n class SubmissionsController extends Controller\n {\n     public function index(){\n-         return view('features.submission.index');\n+        return view('features.submission.index');\n+\n     }\n }\n"
+                },
+                {
+                    "date": 1666709546421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,6 @@\n class SubmissionsController extends Controller\n {\n     public function index(){\n         return view('features.submission.index');\n-\n     }\n }\n"
+                },
+                {
+                    "date": 1666710096101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n use Illuminate\\Http\\Request;\n \n class SubmissionsController extends Controller\n {\n+    // \n     public function index(){\n+        \n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710125017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n class SubmissionsController extends Controller\n {\n     // \n     public function index(){\n-        \n+        // $\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710516972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n {\n     // \n     public function index(){\n         // $\n+        $\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710523944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,15 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n+use Mockery\\Matcher\\Subset;\n \n class SubmissionsController extends Controller\n {\n     // \n     public function index(){\n         // $\n-        $\n+        $submission=Subset\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710529355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\Submission;\n use Illuminate\\Http\\Request;\n-use Mockery\\Matcher\\Subset;\n \n class SubmissionsController extends Controller\n {\n     // \n     public function index(){\n         // $\n-        $submission=Subset\n+        $submission=Submission::all()\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710536145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::all()\n+        $submission=Submission::where('status', ')\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710541979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::where('status', ')\n+        $submission=Submission::where('status','=')\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666710550296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::where('status','=')\n+        $submission=Submission::where('status','=',null)->get();\n         return view('features.submission.index');\n     }\n }\n"
+                }
+            ],
+            "date": 1666518336069,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass SubmissionsController extends Controller\n{\n    public function index(){\n        return\n    }\n}\n"
+        }
+    ]
+}

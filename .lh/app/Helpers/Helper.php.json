@@ -1,0 +1,94 @@
+{
+    "sourceFile": "app/Helpers/Helper.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1666631297289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666631304327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-php\n\\ No newline at end of file\n+<?php \n+\n+\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666631373411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,11 @@\n <?php \n \n+if (!function_exists('hasAccessToken')) {\n+    function hasAccessToken()\n+    {\n+       \n+    }\n+}\n \n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666631454509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n if (!function_exists('hasAccessToken')) {\n     function hasAccessToken()\n     {\n-       \n+        date1 = new DateTime(\"2007-03-24\");\n+        $date2 = new DateTime(\"2007-03-26\");\n+        $interval = $date1->diff($date2);\n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631461756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n if (!function_exists('hasAccessToken')) {\n     function hasAccessToken()\n     {\n-        date1 = new DateTime(\"2007-03-24\");\n+        $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n     }\n }\n"
+                },
+                {
+                    "date": 1666631470518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php \n \n-if (!function_exists('hasAccessToken')) {\n+if (!function_exists('Get')) {\n     function hasAccessToken()\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n"
+                },
+                {
+                    "date": 1666631497972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php \n \n-if (!function_exists('Get')) {\n+if (!function_exists('Getdifference')) {\n     function hasAccessToken()\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n"
+                },
+                {
+                    "date": 1666631508098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php \n \n-if (!function_exists('Getdifference')) {\n+if (!function_exists('GetDifferenceDate')) {\n     function hasAccessToken()\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n"
+                },
+                {
+                    "date": 1666631516562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php \n \n if (!function_exists('GetDifferenceDate')) {\n-    function hasAccessToken()\n+    function GetDifferenceDate()\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n"
+                },
+                {
+                    "date": 1666631524118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n+        \n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631530572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n-        \n+        return $interval->d\n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631536493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n-        return $interval->d\n+        return $interval->days .;\n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631543896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n-        return $interval->days .;\n+        return $interval->days .'Har';\n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631549158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n-        return $interval->days .'Har';\n+        return $interval->days . .'Hari';\n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631570357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n <?php \n \n if (!function_exists('GetDifferenceDate')) {\n-    function GetDifferenceDate()\n+    function GetDifferenceDate($date)\n     {\n         $date1 = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n-        return $interval->days . .'Hari';\n+        return $interval->days .' ' .'Hari';\n     }\n }\n \n \n"
+                },
+                {
+                    "date": 1666631578302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php \n \n if (!function_exists('GetDifferenceDate')) {\n-    function GetDifferenceDate($date)\n+    function GetDifferenceDate($date1,$date2)\n     {\n-        $date1 = new DateTime(\"2007-03-24\");\n+        $date = new DateTime(\"2007-03-24\");\n         $date2 = new DateTime(\"2007-03-26\");\n         $interval = $date1->diff($date2);\n         return $interval->days .' ' .'Hari';\n     }\n"
+                },
+                {
+                    "date": 1666631588332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n if (!function_exists('GetDifferenceDate')) {\n     function GetDifferenceDate($date1,$date2)\n     {\n         $date = new DateTime(\"2007-03-24\");\n-        $date2 = new DateTime(\"2007-03-26\");\n-        $interval = $date1->diff($date2);\n+        $date3 = new DateTime(\"2007-03-26\");\n+        $interval = $date->diff($date2);\n         return $interval->days .' ' .'Hari';\n     }\n }\n \n"
+                },
+                {
+                    "date": 1666631595785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n if (!function_exists('GetDifferenceDate')) {\n     function GetDifferenceDate($date1,$date2)\n     {\n-        $date = new DateTime(\"2007-03-24\");\n+        $date = new DateTime();\n         $date3 = new DateTime(\"2007-03-26\");\n         $interval = $date->diff($date2);\n         return $interval->days .' ' .'Hari';\n     }\n"
+                },
+                {
+                    "date": 1666631602909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n if (!function_exists('GetDifferenceDate')) {\n     function GetDifferenceDate($date1,$date2)\n     {\n-        $date = new DateTime();\n+        $date = new DateTime($date1);\n         $date3 = new DateTime(\"2007-03-26\");\n         $interval = $date->diff($date2);\n         return $interval->days .' ' .'Hari';\n     }\n"
+                },
+                {
+                    "date": 1666631607968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if (!function_exists('GetDifferenceDate')) {\n     function GetDifferenceDate($date1,$date2)\n     {\n         $date = new DateTime($date1);\n-        $date3 = new DateTime(\"2007-03-26\");\n+        $date3 = new DateTime();\n         $interval = $date->diff($date2);\n         return $interval->days .' ' .'Hari';\n     }\n }\n"
+                }
+            ],
+            "date": 1666631297289,
+            "name": "Commit-0",
+            "content": "php"
+        }
+    ]
+}

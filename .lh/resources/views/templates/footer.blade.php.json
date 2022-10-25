@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1666281560976,
@@ -44,6 +44,26 @@
                 {
                     "date": 1666285315530,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n-  {{-- <script src=\"{{ asset('assets/js/data-table.js') }}\"></script> --}}\n+  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666462221290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- custom js for this page -->\n-  <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n+  {{-- <script src=\"{{ asset('assets/js/data-table.js') }}\"></script> --}}\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666489348821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n \t<!-- inject:js -->\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n \t<!-- endinject -->\n-  <!-- custom js for this page -->\n   {{-- <script src=\"{{ asset('assets/js/data-table.js') }}\"></script> --}}\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n"
+                },
+                {
+                    "date": 1666489353943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,10 @@\n \t<!-- endinject -->\n   <!-- plugin js for this page -->\n   <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n   <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n-\t<!-- end plugin js for this page -->\n-\t<!-- inject:js -->\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n-\t<!-- endinject -->\n-  {{-- <script src=\"{{ asset('assets/js/data-table.js') }}\"></script> --}}\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666489359812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n \t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n \t<!-- endinject -->\n   <!-- plugin js for this page -->\n-  <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n-  <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n+ \t <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n+  \t<script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n \t<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n   @stack('scripts')\n \t<!-- end custom js for this page -->\n"
+                },
+                {
+                    "date": 1666489367111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n \t\t</div>\n \t</div>\n \n     <script src=\"{{ asset('assets/jquery-3.6.0.js') }}\"></script>\n-\t<!-- core:js -->\n \t<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n  \t<script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n   \t<script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n \t<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n"
                 }
             ],
             "date": 1666281560976,

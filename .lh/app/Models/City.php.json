@@ -1,0 +1,50 @@
+{
+    "sourceFile": "app/Models/City.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1666497731672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666497739486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \n class City extends Model\n {\n     use HasFactory;\n+    protected $guarded\n }\n \n"
+                },
+                {
+                    "date": 1666497744832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n class City extends Model\n {\n     use HasFactory;\n-    protected $guarded\n+    protected $guarded=['id']\n }\n \n"
+                },
+                {
+                    "date": 1666628065604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,9 @@\n \n class City extends Model\n {\n     use HasFactory;\n-    protected $guarded=['id']\n+    protected $guarded=['id'];\n+\n+    protected \n }\n \n"
+                },
+                {
+                    "date": 1666628155565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n \n-    protected \n+    protected Su\n }\n \n"
+                },
+                {
+                    "date": 1666628167572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,9 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n \n-    protected Su\n+    public function Submission(){\n+        ret\n+    }\n }\n \n"
+                },
+                {
+                    "date": 1666628174918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n     use HasFactory;\n     protected $guarded=['id'];\n \n     public function Submission(){\n-        ret\n+        return $this-\n     }\n }\n \n"
+                },
+                {
+                    "date": 1666628181199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n     use HasFactory;\n     protected $guarded=['id'];\n \n     public function Submission(){\n-        return $this-\n+        return $this->belongsTo(SUb)\n     }\n }\n \n"
+                },
+                {
+                    "date": 1666628186399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n     use HasFactory;\n     protected $guarded=['id'];\n \n     public function Submission(){\n-        return $this->belongsTo(SUb)\n+        return $this->belongsTo(Submission::class)\n     }\n }\n \n"
+                }
+            ],
+            "date": 1666497731672,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass City extends Model\n{\n    use HasFactory;\n}\n\n"
+        }
+    ]
+}

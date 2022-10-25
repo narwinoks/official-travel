@@ -1,0 +1,18 @@
+{
+    "sourceFile": "public/assets/css/custome/1.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1666519103706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1666519103706,
+            "name": "Commit-0",
+            "content": ".project-tab {\n    padding: 10%;\n    margin-top: -8%;\n}\n.project-tab #tabs{\n    background: #007b5e;\n    color: #eee;\n}\n.project-tab #tabs h6.section-title{\n    color: #eee;\n}\n.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {\n    color: #0062cc;\n    background-color: transparent;\n    border-color: transparent transparent #f3f3f3;\n    border-bottom: 3px solid !important;\n    font-size: 16px;\n    font-weight: bold;\n}\n.project-tab .nav-link {\n    border: 1px solid transparent;\n    border-top-left-radius: .25rem;\n    border-top-right-radius: .25rem;\n    color: #0062cc;\n    font-size: 16px;\n    font-weight: 600;\n}\n.project-tab .nav-link:hover {\n    border: none;\n}\n.project-tab thead{\n    background: #f3f3f3;\n    color: #333;\n}\n.project-tab a{\n    text-decoration: none;\n    color: #333;\n    font-weight: 600;\n}"
+        }
+    ]
+}

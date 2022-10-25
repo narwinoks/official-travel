@@ -1,0 +1,102 @@
+{
+    "sourceFile": "public/assets/js/data-table.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1666519405514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666519476621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,19 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    \n+    $('#dataTableExample').DataTable({\n+      \"aLengthMenu\": [\n+        [10, 30, 50, -1],\n+        [10, 30, 50, \"All\"]\n+      ],\n+      \"iDisplayLength\": 10,\n+      \"language\": {\n+        search: \"\"\n+      }\n+    });\n+\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n       var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');\n"
+                },
+                {
+                    "date": 1666519583110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    $('#dataTableExample').DataTable({\n+    $('#dataTableExample2').DataTable({\n       \"aLengthMenu\": [\n         [10, 30, 50, -1],\n         [10, 30, 50, \"All\"]\n       ],\n@@ -21,8 +21,13 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n+    $('a[data-toggle=\"tab\"]').on('shown.bs.tab', function(e){\n+      $($.fn.dataTable.tables(true)).DataTable()\n+         .columns.adjust()\n+         .responsive.recalc();\n+   });   \n \n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666519791234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,9 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    $('a[data-toggle=\"tab\"]').on('shown.bs.tab', function(e){\n-      $($.fn.dataTable.tables(true)).DataTable()\n-         .columns.adjust()\n-         .responsive.recalc();\n-   });   \n+    \n \n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666519806142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    \n \n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666520140255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,13 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n+    $('a[data-toggle=\"tab\"]').on('shown.bs.tab', function(e){\n+      $($.fn.dataTable.tables(true)).DataTable()\n+         .columns.adjust()\n+        //  .responsive.recalc();\n+   });   \n \n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666520882524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,8 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    $('a[data-toggle=\"tab\"]').on('shown.bs.tab', function(e){\n-      $($.fn.dataTable.tables(true)).DataTable()\n-         .columns.adjust()\n-        //  .responsive.recalc();\n-   });   \n \n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666520892176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-\n+    $(\"\").click(function(){\n+      $(\"p\").removeClass(\"intro\");\n+    });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n       var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');\n"
+                },
+                {
+                    "date": 1666520932125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    $(\"\").click(function(){\n+    $(\"#test1\").click(function(){\n       $(\"p\").removeClass(\"intro\");\n     });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n"
+                },
+                {
+                    "date": 1666520950759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         search: \"\"\n       }\n     });\n     $(\"#test1\").click(function(){\n-      $(\"p\").removeClass(\"intro\");\n+      $(\"\").removeClass(\"intro\");\n     });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666520965315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         search: \"\"\n       }\n     });\n     $(\"#test1\").click(function(){\n-      $(\"\").removeClass(\"intro\");\n+      $(\"#dataTableExample\").removeClass(\"d-none\");\n     });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666521005841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n         search: \"\"\n       }\n     });\n     $(\"#test1\").click(function(){\n-      $(\"#dataTableExample\").removeClass(\"d-none\");\n+      // $(\"#dataTableExample\").removeClass(\"d-none\");\n+      console.log(\"okee\");\n     });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n       // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n"
+                },
+                {
+                    "date": 1666521021355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n-    $(\"#test1\").click(function(){\n+    $(\"button\").click(function(){\n       // $(\"#dataTableExample\").removeClass(\"d-none\");\n       console.log(\"okee\");\n     });\n     $('#dataTableExample').each(function() {\n"
+                },
+                {
+                    "date": 1666521031960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         search: \"\"\n       }\n     });\n     $(\"button\").click(function(){\n-      // $(\"#dataTableExample\").removeClass(\"d-none\");\n+      $(\"#dataTableExample\").removeClass(\"d-none\");\n       console.log(\"okee\");\n     });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n"
+                },
+                {
+                    "date": 1666521149787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         search: \"\"\n       }\n     });\n     $(\"button\").click(function(){\n-      $(\"#dataTableExample\").removeClass(\"d-none\");\n+      $(\"#test\").removeClass(\"d-none\");\n       console.log(\"okee\");\n     });\n     $('#dataTableExample').each(function() {\n       var datatable = $(this);\n"
+                },
+                {
+                    "date": 1666521178353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n $(function() {\n   'use strict';\n \n   $(function() {\n+    $(\"#test\").removeClass(\"d-none\");\n     $('#dataTableExample').DataTable({\n       \"aLengthMenu\": [\n         [10, 30, 50, -1],\n         [10, 30, 50, \"All\"]\n"
+                },
+                {
+                    "date": 1666521190555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n $(function() {\n   'use strict';\n \n   $(function() {\n-    $(\"#test\").removeClass(\"d-none\");\n     $('#dataTableExample').DataTable({\n       \"aLengthMenu\": [\n         [10, 30, 50, -1],\n         [10, 30, 50, \"All\"]\n"
+                },
+                {
+                    "date": 1666521206127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n+    // ajax show hide tables;\n     $(\"button\").click(function(){\n       $(\"#test\").removeClass(\"d-none\");\n       console.log(\"okee\");\n     });\n"
+                },
+                {
+                    "date": 1666521212402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n       \"language\": {\n         search: \"\"\n       }\n     });\n+    // ajax table 2\n     $('#dataTableExample2').DataTable({\n       \"aLengthMenu\": [\n         [10, 30, 50, -1],\n         [10, 30, 50, \"All\"]\n"
+                },
+                {
+                    "date": 1666521220927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n $(function() {\n   'use strict';\n \n   $(function() {\n+    // ajax table 1\n     $('#dataTableExample').DataTable({\n       \"aLengthMenu\": [\n         [10, 30, 50, -1],\n         [10, 30, 50, \"All\"]\n"
+                },
+                {
+                    "date": 1666521245711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,17 +28,17 @@\n     $(\"button\").click(function(){\n       $(\"#test\").removeClass(\"d-none\");\n       console.log(\"okee\");\n     });\n-    $('#dataTableExample').each(function() {\n-      var datatable = $(this);\n-      // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n-      var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');\n-      search_input.attr('placeholder', 'Search');\n-      search_input.removeClass('form-control-sm');\n-      // LENGTH - Inline-Form control\n-      var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');\n-      length_sel.removeClass('form-control-sm');\n-    });\n+    // $('#dataTableExample').each(function() {\n+    //   var datatable = $(this);\n+    //   // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n+    //   var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');\n+    //   search_input.attr('placeholder', 'Search');\n+    //   search_input.removeClass('form-control-sm');\n+    //   // LENGTH - Inline-Form control\n+    //   var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');\n+    //   length_sel.removeClass('form-control-sm');\n+    // });\n   });\n \n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666521782770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         search: \"\"\n       }\n     });\n     // ajax show hide tables;\n-    $(\"\").click(function(){\n+    $(\"#\").click(function(){\n       $(\"#test\").removeClass(\"d-none\");\n       console.log(\"okee\");\n     });\n     // $('#dataTableExample').each(function() {\n"
+                }
+            ],
+            "date": 1666519405514,
+            "name": "Commit-0",
+            "content": "$(function() {\n  'use strict';\n\n  $(function() {\n    $('#dataTableExample').DataTable({\n      \"aLengthMenu\": [\n        [10, 30, 50, -1],\n        [10, 30, 50, \"All\"]\n      ],\n      \"iDisplayLength\": 10,\n      \"language\": {\n        search: \"\"\n      }\n    });\n    \n    $('#dataTableExample').each(function() {\n      var datatable = $(this);\n      // SEARCH - Add the placeholder for Search and Turn this into in-line form control\n      var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');\n      search_input.attr('placeholder', 'Search');\n      search_input.removeClass('form-control-sm');\n      // LENGTH - Inline-Form control\n      var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');\n      length_sel.removeClass('form-control-sm');\n    });\n  });\n\n});"
+        }
+    ]
+}
