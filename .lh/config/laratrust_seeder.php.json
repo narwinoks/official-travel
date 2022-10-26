@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1666275560783,
@@ -36,6 +36,18 @@
                 {
                     "date": 1666490429327,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n             'pengajuan' => 'c,r,u,d',\n             'profile' => 'r,u'\n         ],\n         'sdm'=>[\n+            'city' =>\n             'pengajuaan' => 'c,r,u,d',\n         ]\n     ],\n \n"
+                },
+                {
+                    "date": 1666803672823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,11 @@\n             'profile' => 'r,u'\n         ],\n         'pegawai' => [\n             'pengajuan' => 'c,r,u,d',\n-            'profile' => 'r,u'\n         ],\n         'sdm'=>[\n-            'city' =>\n+            'city' =>'c,r,u,d',\n             'pengajuaan' => 'c,r,u,d',\n         ]\n     ],\n \n"
+                },
+                {
+                    "date": 1666803678441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             'payments' => 'c,r,u,d',\n             'profile' => 'r,u'\n         ],\n         'pegawai' => [\n-            'pengajuan' => 'c,r,u,d',\n+            'pengajuan' => 'c,r',\n         ],\n         'sdm'=>[\n             'city' =>'c,r,u,d',\n             'pengajuaan' => 'c,r,u,d',\n"
+                },
+                {
+                    "date": 1666803688801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n      * Control if all the laratrust tables should be truncated before running the seeder.\n      */\n     'truncate_tables' => true,\n \n-    'roles_structure' => [\\\n+    'roles_structure' => [\n         'pegawai' => [\n             'pengajuan' => 'c,r',\n         ],\n         'sdm'=>[\n"
                 }
             ],
             "date": 1666275560783,

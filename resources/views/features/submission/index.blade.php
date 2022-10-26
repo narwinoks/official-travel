@@ -6,6 +6,7 @@
             <div class="card-body">
                 <h6 class="card-title">List New Submissions</h6>
                 <p class="card-description">List Of Unanswered Submissions</p>
+                <a href="{{ route('submission.create') }}" class="btn btn-success mb-3">Add Submission</a>
                 <div id="table-1" class="table">
                     <table id="dataTableExample" class="table">
                         <thead>

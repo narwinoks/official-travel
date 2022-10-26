@@ -12,18 +12,12 @@ return [
     'truncate_tables' => true,
 
     'roles_structure' => [
-        'admin' => [
-            'users' => 'c,r,u,d',
-            'payments' => 'c,r,u,d',
-            'profile' => 'r,u'
-        ],
         'pegawai' => [
-            'pengajuan' => 'c,r,u,d',
-            'profile' => 'r,u'
+            'pengajuan' => 'c,r',
         ],
         'sdm'=>[
             'city' =>'c,r,u,d',
-            'pengajuaan' => 'c,r,u,d',
+            'pengajuaan' => 'c,r,u',
         ]
     ],
 

@@ -21,7 +21,7 @@
           </li>
           <li class="nav-item nav-category">Menu</li>
           <li class="nav-item">
-            @if (Auth::User()->hasRole('admin'))
+            @if (Auth::User()->hasRole('sdm'))
             <a href="{{ route('submission.all' ) }}" class="nav-link">
               <i class="link-icon" data-feather="message-square"></i>
               <span class="link-title">History Submission</span>
@@ -48,7 +48,7 @@
             </a>
           </li>
           @endif
-            
+
         </ul>
       </div>
     </nav>

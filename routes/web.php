@@ -30,19 +30,19 @@ Route::controller(AuthController::class)->group(function(){
 Route::resource('city', CityController::class)->middleware('auth');
 Route::controller(DataController::class)->group(function(){
     Route::prefix('data')->group(function(){
-        Route::get('/city','city')->name('data.city');
-        Route::get('/newsubmission','NewSubmission')->name('data.newsubmission');
-        Route::get('/allsubmission','HistorySubmission')->name('data.allsubmission');
+        Route::get('/city','city')->name('data.city')->middleware('role:sdm');
+        Route::get('/newsubmission','NewSubmission')->name('data.newsubmission')->middleware('role:sdm');
+        Route::get('/allsubmission','HistorySubmission')->name('data.allsubmission')->middleware('role:sdm');
         Route::get('/mysubmission','MySubmission')->name('data.mysubmission');
     });
 });
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 Route::middleware('auth')->controller(SubmissionsController::class)->prefix('submissions')->group(function(){
-    Route::get('/history','HistorySubmission')->name('submission.history');
-    Route::get('/all','AllSubmissions')->name('submission.all');
-    Route::get('/','index')->name('submission.index');
+    Route::get('/history','HistorySubmission')->name('submission.history')->middleware('role:sdm');
+    Route::get('/all','AllSubmissions')->name('submission.all')->middleware('role:sdm');
+    Route::get('/','index')->name('submission.index')->middleware('role:pegawai');
     Route::get('/create','create')->name('submission.create');
-    Route::get('/approve/{id}','Approve')->name('submission.approve');
-    Route::post('/approve','ApproveStore')->name('submission.approve.store');
+    Route::get('/approve/{id}','Approve')->name('submission.approve')->middleware('role:sdm');
+    Route::post('/approve','ApproveStore')->name('submission.approve.store')->middleware('role:sdm');
     Route::post('/store','store')->name('submission.store');
 });

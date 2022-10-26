@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 27,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1666281604284,
@@ -116,6 +116,10 @@
                 {
                     "date": 1666521757316,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n     <div class=\"row\">\n         <div class=\"col-md-12 col-sm-11\">\n             @include('templates.alert')\n         </div>\n-        @yield('content')\n+        {{-- <div class=\"col-md-12 grid-margin stretch-card\"> --}}\n+            @yield('content')\n+        {{-- </div> --}}\n     </div>\n </div>\n @include('templates.footer')\n"
+                },
+                {
+                    "date": 1666805581938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,17 @@\n @include('templates.sedibar')\n @include('templates.navbar')\n <div class=\"page-content\">\n     <nav class=\"page-breadcrumb\">\n-        <ol class=\"breadcrumb\">\n+        {{-- <ol class=\"breadcrumb\">\n             <li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n             <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n-        </ol>\n+        </ol> --}}\n     </nav>\n     <div class=\"row\">\n         <div class=\"col-md-12 col-sm-11\">\n             @include('templates.alert')\n         </div>\n-        {{-- <div class=\"col-md-12 grid-margin stretch-card\"> --}}\n             @yield('content')\n         {{-- </div> --}}\n     </div>\n </div>\n"
                 }
             ],
             "date": 1666281604284,
