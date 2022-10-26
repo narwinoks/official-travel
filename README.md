@@ -1,20 +1,12 @@
-# ![Laravel Example App](logo.png)
 
-[![Build Status](https://img.shields.io/travis/gothinkster/laravel-realworld-example-app/master.svg)](https://travis-ci.org/gothinkster/laravel-realworld-example-app) [![Gitter](https://img.shields.io/gitter/room/realworld-dev/laravel.svg)](https://gitter.im/realworld-dev/laravel) [![GitHub stars](https://img.shields.io/github/stars/gothinkster/laravel-realworld-example-app.svg)](https://github.com/gothinkster/laravel-realworld-example-app/stargazers) [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
-
-> ### Example Laravel codebase containing real world examples (CRUD, auth, advanced patterns and more) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
-
-This repo is functionality complete — PRs and issues welcome!
-
-----------
 
 # Getting started
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
+Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/9.x/installation)
 
-Alternative installation is possible without local dependencies relying on [Docker](#docker). 
+switch to app folder
 
     cd laravel-realworld-example-app
 
@@ -30,6 +22,14 @@ Generate a new application key
 
     php artisan key:generate
 
+Start the  database on .env file
+
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=perjalanan_dinas
+    DB_USERNAME=root
+    DB_PASSWORD=
 
 Run the database migrations and sedd(**Set the database connection in .env before migrating**)
 
@@ -38,3 +38,13 @@ Run the database migrations and sedd(**Set the database connection in .env befor
 Start the local development server
 
     php artisan serve
+    
+at login
+
+    role sdm        username:sdm
+                    password:password
+    role pegawai    username:winarno
+                    password:password
+                    username:pegawai
+                    password:password
+                 
