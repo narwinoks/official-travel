@@ -14,7 +14,8 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <label>Form City</label>
-                                    <select class="js-example w-100 @error('from_city_id') is-invalid @enderror"
+                                    <select
+                                        class="js-example-basic-single w-100 @error('from_city_id') is-invalid @enderror"
                                         name="from_city_id">
                                         <option>--Select type--</option>
                                         @foreach ($city as $item)
@@ -27,7 +28,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label>To City</label>
-                                    <select class="js-example-basic w-100 @error('to_city_id') is-invalid @enderror"
+                                    <select class="js-example-basic-single w-100 @error('to_city_id') is-invalid @enderror"
                                         name="to_city_id">
                                         <option selected hidden>Select City</option>
                                         @foreach ($city as $item)
@@ -38,7 +39,6 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-
                             </div>
                         </div>
                         <div class="form-group">

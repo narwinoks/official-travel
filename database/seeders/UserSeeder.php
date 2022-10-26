@@ -20,6 +20,6 @@ class UserSeeder extends Seeder
             'username' =>'winarno',
             'password' =>Hash::make('password')
         ]);
-        // $model->attachRole(1);
+        $model->attachRole(1);
     }
 }
