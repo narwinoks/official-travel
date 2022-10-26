@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1666496812123,
@@ -28,6 +28,10 @@
                 {
                     "date": 1666496944387,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n @if (session()->has('success'))\n     <div class=\"alert alert-fill-success\" role=\"alert\">\n         {{ session('success') }}\n     </div>\n-@else\n-    @if (session()->has('danger'))\n-        <div class=\"alert alert-fill-danger\" role=\"alert\">\n-            {{ session('danger') }}\n-        </div>\n-    @e\n+@endif\n+@if (session()->has('danger'))\n+    <div class=\"alert alert-fill-danger\" role=\"alert\">\n+        {{ session('danger') }}\n+    </div>\n+@endif\n"
+                },
+                {
+                    "date": 1666802489589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,9 @@\n     <div class=\"alert alert-fill-danger\" role=\"alert\">\n         {{ session('danger') }}\n     </div>\n @endif\n+@if (session()->has('danger'))\n+    <div class=\"alert alert-fill-danger\" role=\"alert\">\n+        {{ session('danger') }}\n+    </div>\n+@endif\n"
                 }
             ],
             "date": 1666496812123,

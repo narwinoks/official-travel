@@ -43,5 +43,6 @@ Route::middleware('auth')->controller(SubmissionsController::class)->prefix('sub
     Route::get('/','index')->name('submission.index');
     Route::get('/create','create')->name('submission.create');
     Route::get('/approve/{id}','Approve')->name('submission.approve');
+    Route::post('/approve','ApproveStore')->name('submission.approve.store');
     Route::post('/store','store')->name('submission.store');
 });

@@ -1,0 +1,170 @@
+{
+    "sourceFile": "app/Http/Controllers/BaseController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 38,
+            "patches": [
+                {
+                    "date": 1666763628113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666763653326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,7 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function \n+ public function calculate distance\n+\n }\n"
+                },
+                {
+                    "date": 1666763659041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function calculate distance\n+ public function CalculateDistance\n \n }\n"
+                },
+                {
+                    "date": 1666763664888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance\n+ public function CalculateDistance(){\n+    \n+ }\n \n }\n"
+                },
+                {
+                    "date": 1666763681440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance(){\n-    \n+ public function CalculateDistance($){\n+\n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763772952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($){\n+ public function CalculateDistance($FromLongi){\n \n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763780124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($FromLongi){\n+ public function CalculateDistance($FromLongitude, $ToLongitude){\n \n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763786192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($FromLongitude, $ToLongitude){\n+ public function CalculateDistance($FromLongitude, $ToLongitude){}\n \n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763791932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($FromLongitude, $ToLongitude){}\n+ public function CalculateDistance($FromLongitude, $ToLongitude){\n \n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763797900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($FromLongitude, $ToLongitude){\n+ public function CalculateDistance($FromLongitude, $ToLongitude,$){\n \n+\n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763805210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($FromLongitude, $ToLongitude,$){\n+ public function CalculateDistance($FromLongitude, $ToLongitude,$Fromla){\n \n \n  }\n \n"
+                },
+                {
+                    "date": 1666763917654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,29 @@\n use Illuminate\\Http\\Request;\n \n class BaseController extends Controller\n {\n- public function CalculateDistance($FromLongitude, $ToLongitude,$Fromla){\n+ public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n+    if (($lat1 == $lat2) && ($lon1 == $lon2)) {\n+        return 0;\n+      }\n+      else {\n+        $theta = $lon1 - $lon2;\n+        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));\n+        $dist = acos($dist);\n+        $dist = rad2deg($dist);\n+        $miles = $dist * 60 * 1.1515;\n+        $unit = strtoupper($unit);\n+    \n+        if ($unit == \"K\") {\n+          return ($miles * 1.609344);\n+        } else if ($unit == \"N\") {\n+          return ($miles * 0.8684);\n+        } else {\n+          return $miles;\n+        }\n+      }\n \n  }\n \n }\n"
+                },
+                {
+                    "date": 1666763926823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($lat1 == $lat2) && ($lon1 == $lon2)) {\n+    if (($ == $lat2) && ($lon1 == $lon2)) {\n         return 0;\n       }\n       else {\n         $theta = $lon1 - $lon2;\n-        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));\n+        $dist = sin(deg2rad($)) * sin(deg2rad($lat2)) +  cos(deg2rad($)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = strtoupper($unit);\n"
+                },
+                {
+                    "date": 1666763945358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($ == $lat2) && ($lon1 == $lon2)) {\n+    if (($Fr == $lat2) && ($lon1 == $lon2)) {\n         return 0;\n       }\n       else {\n         $theta = $lon1 - $lon2;\n-        $dist = sin(deg2rad($)) * sin(deg2rad($lat2)) +  cos(deg2rad($)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));\n+        $dist = sin(deg2rad($Fr)) * sin(deg2rad($lat2)) +  cos(deg2rad($Fr)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = strtoupper($unit);\n"
+                },
+                {
+                    "date": 1666763957328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($Fr == $lat2) && ($lon1 == $lon2)) {\n+    if (($Fromlatitude == $) && ($lon1 == $lon2)) {\n         return 0;\n       }\n       else {\n         $theta = $lon1 - $lon2;\n-        $dist = sin(deg2rad($Fr)) * sin(deg2rad($lat2)) +  cos(deg2rad($Fr)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));\n+        $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = strtoupper($unit);\n"
+                },
+                {
+                    "date": 1666763968304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($Fromlatitude == $) && ($lon1 == $lon2)) {\n+    if (($Fromlatitude == $Tolatitude) && ($ == $lon2)) {\n         return 0;\n       }\n       else {\n-        $theta = $lon1 - $lon2;\n-        $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($)) * cos(deg2rad($theta));\n+        $theta = $ - $lon2;\n+        $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = strtoupper($unit);\n"
+                },
+                {
+                    "date": 1666763990083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,13 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($Fromlatitude == $Tolatitude) && ($ == $lon2)) {\n+    if (($Fromlatitude == $Tolatitude) && ($FromLongitude == $)) {\n         return 0;\n       }\n       else {\n-        $theta = $ - $lon2;\n+        $theta = $FromLongitude - $;\n         $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n"
+                },
+                {
+                    "date": 1666764001533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,13 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($Fromlatitude == $Tolatitude) && ($FromLongitude == $)) {\n+    if (($Fromlatitude == $Tolatitude) && ($FromLongitude == $ToLongitude)) {\n         return 0;\n       }\n       else {\n-        $theta = $FromLongitude - $;\n+        $theta = $FromLongitude - $ToLongitude;\n         $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n"
+                },
+                {
+                    "date": 1666764008187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n-        $unit = strtoupper($unit);\n+        $unit = 'K'\n     \n         if ($unit == \"K\") {\n           return ($miles * 1.609344);\n         } else if ($unit == \"N\") {\n"
+                },
+                {
+                    "date": 1666764015464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n         $dist = acos($dist);\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n-        $unit = 'K'\n+        $unit = 'K';\n     \n         if ($unit == \"K\") {\n           return ($miles * 1.609344);\n         } else if ($unit == \"N\") {\n@@ -26,8 +26,7 @@\n         } else {\n           return $miles;\n         }\n       }\n-\n  }\n \n }\n"
+                },
+                {
+                    "date": 1666764628329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,20 @@\n           return $miles;\n         }\n       }\n  }\n+ function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {\n+    $theta = $longitude1 - $longitude2; \n+    $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n+    $distance = acos($distance); \n+    $distance = rad2deg($distance); \n+    $distance = $distance * 60 * 1.1515; \n+    switch($unit) { \n+      case 'miles': \n+        break; \n+      case 'kilometers' : \n+        $distance = $distance * 1.609344; \n+    } \n+    return (round($distance,2)); \n+  }\n \n }\n"
+                },
+                {
+                    "date": 1666764803535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = 'K';\n     \n-        if ($unit == \"K\") {\n+        // if ($unit == \"K\") {\n           return ($miles * 1.609344);\n         } else if ($unit == \"N\") {\n           return ($miles * 0.8684);\n         } else {\n"
+                },
+                {
+                    "date": 1666764809016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,12 @@\n         $unit = 'K';\n     \n         // if ($unit == \"K\") {\n           return ($miles * 1.609344);\n-        } else if ($unit == \"N\") {\n-          return ($miles * 0.8684);\n-        } else {\n-          return $miles;\n+        // } else if ($unit == \"N\") {\n+        //   return ($miles * 0.8684);\n+        // } else {\n+        //   return $miles;\n         }\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {\n"
+                },
+                {
+                    "date": 1666764869306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,23 +24,9 @@\n         // } else if ($unit == \"N\") {\n         //   return ($miles * 0.8684);\n         // } else {\n         //   return $miles;\n-        }\n+        // }\n       }\n- }\n- function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {\n-    $theta = $longitude1 - $longitude2; \n-    $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n-    $distance = acos($distance); \n-    $distance = rad2deg($distance); \n-    $distance = $distance * 60 * 1.1515; \n-    switch($unit) { \n-      case 'miles': \n-        break; \n-      case 'kilometers' : \n-        $distance = $distance * 1.609344; \n-    } \n-    return (round($distance,2)); \n-  }\n+ \n \n }\n"
+                },
+                {
+                    "date": 1666764881536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,13 +20,8 @@\n         $unit = 'K';\n     \n         // if ($unit == \"K\") {\n           return ($miles * 1.609344);\n-        // } else if ($unit == \"N\") {\n-        //   return ($miles * 0.8684);\n-        // } else {\n-        //   return $miles;\n-        // }\n       }\n- \n+}\n \n }\n"
+                },
+                {
+                    "date": 1666764895433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,9 @@\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = 'K';\n     \n-        // if ($unit == \"K\") {\n-          return ($miles * 1.609344);\n+        return $miles * 1.609344);\n       }\n }\n \n }\n"
+                },
+                {
+                    "date": 1666764923369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,29 @@\n         $dist = rad2deg($dist);\n         $miles = $dist * 60 * 1.1515;\n         $unit = 'K';\n     \n-        return $miles * 1.609344);\n+        // if ($unit == \"K\") {\n+          return ($miles * 1.609344);\n+        // } else if ($unit == \"N\") {\n+        //   return ($miles * 0.8684);\n+        // } else {\n+        //   return $miles;\n+        // }\n       }\n-}\n+ }\n+ function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {\n+    $theta = $longitude1 - $longitude2; \n+    $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n+    $distance = acos($distance); \n+    $distance = rad2deg($distance); \n+    $distance = $distance * 60 * 1.1515; \n+    switch($unit) { \n+      case 'miles': \n+        break; \n+      case 'kilometers' : \n+        $distance = $distance * 1.609344; \n+    } \n+    return (round($distance,2)); \n+  }\n \n }\n"
+                },
+                {
+                    "date": 1666764943475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         //   return $miles;\n         // }\n       }\n  }\n- function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {\n+ function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666764989307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,28 +7,9 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-    if (($Fromlatitude == $Tolatitude) && ($FromLongitude == $ToLongitude)) {\n-        return 0;\n-      }\n-      else {\n-        $theta = $FromLongitude - $ToLongitude;\n-        $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n-        $dist = acos($dist);\n-        $dist = rad2deg($dist);\n-        $miles = $dist * 60 * 1.1515;\n-        $unit = 'K';\n-    \n-        // if ($unit == \"K\") {\n-          return ($miles * 1.609344);\n-        // } else if ($unit == \"N\") {\n-        //   return ($miles * 0.8684);\n-        // } else {\n-        //   return $miles;\n-        // }\n-      }\n- }\n+\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n"
+                },
+                {
+                    "date": 1666765002361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,30 @@\n class BaseController extends Controller\n {\n  public function CalculateDistance($FromLongitude, $ToLongitude,$Fromlatitude,$Tolatitude){\n \n-\n+    if (($Fromlatitude == $Tolatitude) && ($FromLongitude == $ToLongitude)) {\n+        return 0;\n+      }\n+      else {\n+        $theta = $FromLongitude - $ToLongitude;\n+        $dist = sin(deg2rad($Fromlatitude)) * sin(deg2rad($Tolatitude)) +  cos(deg2rad($Fromlatitude)) * cos(deg2rad($Tolatitude)) * cos(deg2rad($theta));\n+        $dist = acos($dist);\n+        $dist = rad2deg($dist);\n+        $miles = $dist * 60 * 1.1515;\n+        $unit = 'K';\n+    \n+        // if ($unit == \"K\") {\n+          return ($miles * 1.609344);\n+        // } else if ($unit == \"N\") {\n+        //   return ($miles * 0.8684);\n+        // } else {\n+        //   return $miles;\n+        // }\n+      }\n+ }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n+    if \n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765010392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         // }\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if \n+    if ()\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765041722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         // }\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if ()\n+    if ($latitude1 == $)\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765048456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         // }\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if ($latitude1 == $)\n+    if ($latitude1 == $latitude2) &&\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765058645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n         //   return $miles;\n         // }\n       }\n  }\n- function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if ($latitude1 == $latitude2) &&\n+ function getDistanceBetweenPointsNew(($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n+    if ($latitude1 == $latitude2) && )$longitude1 == $longitude2){}\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765073629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n         //   return $miles;\n         // }\n       }\n  }\n- function getDistanceBetweenPointsNew(($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if ($latitude1 == $latitude2) && )$longitude1 == $longitude2){}\n+ function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n+    if (($latitude1 == $latitude2) && ($longitude1 == $longitude2){}\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765078892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         // }\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if (($latitude1 == $latitude2) && ($longitude1 == $longitude2){}\n+    if (($latitude1 == $latitude2) && ($longitude1 == $longitude2)){}\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765084641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,11 @@\n         // }\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n-    if (($latitude1 == $latitude2) && ($longitude1 == $longitude2)){}\n+    if (($latitude1 == $latitude2) && ($longitude1 == $longitude2)){\n+\n+    }};\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765111405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n     if (($latitude1 == $latitude2) && ($longitude1 == $longitude2)){\n \n-    }};\n+    }}\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                },
+                {
+                    "date": 1666765121111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,10 @@\n       }\n  }\n  function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'kilometers') {\n     if (($latitude1 == $latitude2) && ($longitude1 == $longitude2)){\n-\n-    }}\n+        \n+    }\n     $theta = $longitude1 - $longitude2; \n     $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta))); \n     $distance = acos($distance); \n     $distance = rad2deg($distance); \n"
+                }
+            ],
+            "date": 1666763628113,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass BaseController extends Controller\n{\n public function \n}\n"
+        }
+    ]
+}

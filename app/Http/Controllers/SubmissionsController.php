@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Submission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class SubmissionsController extends Controller
+class SubmissionsController extends BaseController
 {
     // 
 
@@ -29,8 +30,51 @@ class SubmissionsController extends Controller
         return view('features.submission.create',compact('city'));
     }
     
-    public function Approve(){
-        return view('features.submission.Approve');
+    public function Approve($id){
+        $submission=Submission::where('id',$id)->first();
+        $distance=$this->getDistanceBetweenPointsNew($submission->from_latitude,$submission->from_longitude,$submission->to_latitude,$submission->to_longtitude);
+        switch ($distance) {
+            case  ($distance <= 60):
+                $data=[
+                    'satuan'=>'rp',
+                    'nominal'=>'',
+                    'status'=>'perjalanan dekat'
+                ];
+                break;
+            case ($submission->FromCity->overseas == 1 || $submission->ToCity->overseas == 1):
+                $data=[
+                    'satuan'=>'us',
+                    'nominal'=>'50',
+                    'status'=>'perjalan keluar negri'
+                ];
+                 break;
+            case  ($distance >=61 &&  Str::lower($submission->FromCity->province) == Str::lower ($submission->ToCity->province)):
+                $data=[
+                    'satuan'=>'rp',
+                    'nominal'=>'200000',
+                    'status'=>'perjalan keluar kota dalam province'
+                ];
+                break;
+            case ($distance >=61 &&  Str::lower($submission->FromCity->province) !=Str::lower ($submission->ToCity->province) && Str::lower($submission->FromCity->island) == Str::lower($submission->ToCity->island) ):
+                $data=[
+                    'satuan'=>'rp',
+                    'nominal'=>'250000',
+                    'status'=>'perjalan keluar kota luar province dalam pulau'
+
+                ];
+                break;
+            case ($distance >=61 &&  Str::lower($submission->FromCity->province) !=Str::lower ($submission->ToCity->province) && Str::lower($submission->FromCity->island) != Str::lower($submission->ToCity->island) ):
+                $data=[
+                    'satuan'=>'rp',
+                    'nominal'=>'3000000',
+                    'status'=>'perjalan keluar kota luar province dan pulau'
+                ];
+                break;
+            default:
+                return "gak masuk";
+                break;
+        }
+        return view('features.submission.Approve',compact('submission','distance','data'));
 
     }
 
@@ -60,5 +104,17 @@ class SubmissionsController extends Controller
         }else{
             return to_route('submission.index')->withDanger("Failed Create New City!!");
         }
+    }
+
+    public function ApproveStore(Request $request){
+        $submission = Submission::find($request->id);
+        $submission->update($request->all());
+        // return $submission->status;
+        if ($submission->status == 1 ) {
+          session()->flash('success','Approve Submission Successfully Approved !!');
+        }else{
+            session()->flash('danger','Reaject Submission Successfully Reaject !!');
+        }
+
     }
 }

@@ -61,7 +61,7 @@ class DataController extends Controller
             $description = $record->description;
 
             $return[] = array(
-                "id" => $id,
+                "id" => $key +1,
                 "name" =>$name,
                 "city" => $from .'  '.'To'.'  '. $to,
                 'date'=> $start_at .' '. 'To ' . $end_at  .' '. '(' . GetDifferenceDate($record->start_at,$record->end_at) . ') ' ,

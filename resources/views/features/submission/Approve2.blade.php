@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h6 class="card-title"> Master City</h6>
                 <p class="card-description">Enter Your Data For City</p>
-                <div class="card-body">
+                {{-- <div class="card-body">
                     <h6 class="card-title">Basic Form</h6>
                     <form class="forms-sample" action="{{ route('submission.store') }}" method="POST">
                         @csrf
@@ -85,7 +85,7 @@
                             <button class="btn btn-light">Cancel</button>
                         </div>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -100,8 +100,11 @@
         $(document).on('change', '#from_date, #endDate', function() {
             var startDate = $("#from_date").val() || Date();
             var endDate = $("#endDate").val() || Date();
+
             var date1 = new Date(startDate);
             var date2 = new Date(endDate);
+            console.log(date1);
+            console.log(date2);
             const oneDay = 1000 * 60 * 60 * 24;
             const diffInTime = date2.getTime() - date1.getTime();
             const diffInDays = Math.round(diffInTime / oneDay);

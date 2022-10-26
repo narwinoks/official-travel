@@ -3,11 +3,135 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1666631892245,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666796234510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,7 @@\n     }\n }\n \n \n+\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666796592079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,21 @@\n         return $interval->days .' ' .'Hari';\n     }\n }\n \n+if (!function_exists('konversi_uang')) {\n+\tfunction konversi_uang($a)\n+\t{\n+\t\tif (isset($a)) {\n+\t\t\tif ($a == '') {\n+\t\t\t\t$a = 0;\n+\t\t\t}\n+\t\t\t$p \t\t\t= strlen($a);\n+\t\t\t$hasil \t\t= number_format($a, 2);\n+\t\t\treturn \"Rp. \" . $hasil;\n+\t\t}\n+\t}\n+}\n \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666796711309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n if (!function_exists('konversi_uang')) {\n \tfunction konversi_uang($a)\n \t{\n \t\tif (isset($a)) {\n+            \n \t\t\tif ($a == '') {\n \t\t\t\t$a = 0;\n \t\t\t}\n \t\t\t$p \t\t\t= strlen($a);\n"
+                },
+                {
+                    "date": 1666796716771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n     }\n }\n \n if (!function_exists('konversi_uang')) {\n-\tfunction konversi_uang($a)\n+\tfunction konversi_uang($a,$b)\n \t{\n \t\tif (isset($a)) {\n-            \n+\n \t\t\tif ($a == '') {\n \t\t\t\t$a = 0;\n \t\t\t}\n \t\t\t$p \t\t\t= strlen($a);\n"
+                },
+                {
+                    "date": 1666796726324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n if (!function_exists('konversi_uang')) {\n \tfunction konversi_uang($a,$b)\n \t{\n \t\tif (isset($a)) {\n-\n+            if ($b=='') {\n+                # code...\n+            }\n \t\t\tif ($a == '') {\n \t\t\t\t$a = 0;\n \t\t\t}\n \t\t\t$p \t\t\t= strlen($a);\n"
+                },
+                {
+                    "date": 1666796732083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,17 +13,17 @@\n if (!function_exists('konversi_uang')) {\n \tfunction konversi_uang($a,$b)\n \t{\n \t\tif (isset($a)) {\n-            if ($b=='') {\n+            if ($b=='rp') {\n+                if ($a == '') {\n+                    $a = 0;\n+                }\n+                $p \t\t\t= strlen($a);\n+                $hasil \t\t= number_format($a, 2);\n+                return \"Rp. \" . $hasil;\n                 # code...\n             }\n-\t\t\tif ($a == '') {\n-\t\t\t\t$a = 0;\n-\t\t\t}\n-\t\t\t$p \t\t\t= strlen($a);\n-\t\t\t$hasil \t\t= number_format($a, 2);\n-\t\t\treturn \"Rp. \" . $hasil;\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1666796786868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n                 }\n                 $p \t\t\t= strlen($a);\n                 $hasil \t\t= number_format($a, 2);\n                 return \"Rp. \" . $hasil;\n-                # code...\n             }\n+            \n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1666796841108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n                 $p \t\t\t= strlen($a);\n                 $hasil \t\t= number_format($a, 2);\n                 return \"Rp. \" . $hasil;\n             }\n-            \n+            $decimal = substr($number, -2);\n+            $amount = substr($number, 0, -2) . $separator . $decimal;\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1666796846345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n                 $p \t\t\t= strlen($a);\n                 $hasil \t\t= number_format($a, 2);\n                 return \"Rp. \" . $hasil;\n             }\n+            $number =\n             $decimal = substr($number, -2);\n             $amount = substr($number, 0, -2) . $separator . $decimal;\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1666796878358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n                 $hasil \t\t= number_format($a, 2);\n                 return \"Rp. \" . $hasil;\n             }\n             $number =\n+            $separator = \",\", $currency = \"$\"\n             $decimal = substr($number, -2);\n             $amount = substr($number, 0, -2) . $separator . $decimal;\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1666796885525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n                 $hasil \t\t= number_format($a, 2);\n                 return \"Rp. \" . $hasil;\n             }\n             $number =\n-            $separator = \",\", $currency = \"$\"\n+            $separator = \",\";\n+             $currency = \"$\"\n             $decimal = substr($number, -2);\n             $amount = substr($number, 0, -2) . $separator . $decimal;\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1666796895300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,10 @@\n                 $p \t\t\t= strlen($a);\n                 $hasil \t\t= number_format($a, 2);\n                 return \"Rp. \" . $hasil;\n             }\n-            $number =\n             $separator = \",\";\n-             $currency = \"$\"\n+            $currency = \"$\";\n             $decimal = substr($number, -2);\n             $amount = substr($number, 0, -2) . $separator . $decimal;\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1666796900567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n                 return \"Rp. \" . $hasil;\n             }\n             $separator = \",\";\n             $currency = \"$\";\n-            $decimal = substr($number, -2);\n-            $amount = substr($number, 0, -2) . $separator . $decimal;\n+            $decimal = substr($a, -2);\n+            $amount = substr($a, 0, -2) . $separator . $decimal;\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1666796949886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n             $separator = \",\";\n             $currency = \"$\";\n             $decimal = substr($a, -2);\n             $amount = substr($a, 0, -2) . $separator . $decimal;\n+            return  $amount;\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1666796955629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             $separator = \",\";\n             $currency = \"$\";\n             $decimal = substr($a, -2);\n             $amount = substr($a, 0, -2) . $separator . $decimal;\n-            return  $amount;\n+            return  $currency .$amount;\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1666797604702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,19 @@\n             return  $currency .$amount;\n \t\t}\n \t}\n }\n+if (!function_exists('tgltoview')) {\n+\tfunction tgltoview($data)\n+\t{\n+\t\tif ($data == \"\" || $data == \"0000-00-00\") {\n+\t\t\treturn \"-\";\n+\t\t} else {\n+\t\t\t$hasil = Date('d-m-Y', strtotime($data));\n+\t\t\treturn $hasil;\n+\t\t}\n+\t}\n+}\n \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666798374204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,19 @@\n \t\t\treturn $hasil;\n \t\t}\n \t}\n }\n+if (!function_exists('tgltoview')) {\n+\tfunction tgltoview($data)\n+\t{\n+\t\tif ($data == \"\" || $data == \"0000-00-00\") {\n+\t\t\treturn \"-\";\n+\t\t} else {\n+\t\t\t$hasil = Date('d-m-Y', strtotime($data));\n+\t\t\treturn $hasil;\n+\t\t}\n+\t}\n+}\n \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666798395059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \t\t\treturn $hasil;\n \t\t}\n \t}\n }\n-if (!function_exists('tgltoview')) {\n+if (!function_exists('')) {\n \tfunction tgltoview($data)\n \t{\n \t\tif ($data == \"\" || $data == \"0000-00-00\") {\n \t\t\treturn \"-\";\n"
+                },
+                {
+                    "date": 1666798401968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n \t\t\treturn $hasil;\n \t\t}\n \t}\n }\n-if (!function_exists('')) {\n-\tfunction tgltoview($data)\n+if (!function_exists('distance')) {\n+\tfunction tgltoview($date1,date2)\n \t{\n \t\tif ($data == \"\" || $data == \"0000-00-00\") {\n \t\t\treturn \"-\";\n \t\t} else {\n"
+                },
+                {
+                    "date": 1666798407446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \t\t}\n \t}\n }\n if (!function_exists('distance')) {\n-\tfunction tgltoview($date1,date2)\n+\tfunction tgltoview($)\n \t{\n \t\tif ($data == \"\" || $data == \"0000-00-00\") {\n \t\t\treturn \"-\";\n \t\t} else {\n"
+                },
+                {
+                    "date": 1666798413184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \t\t}\n \t}\n }\n if (!function_exists('distance')) {\n-\tfunction tgltoview($)\n+\tfunction tgltoview($data,$data)\n \t{\n \t\tif ($data == \"\" || $data == \"0000-00-00\") {\n \t\t\treturn \"-\";\n \t\t} else {\n"
+                },
+                {
+                    "date": 1666798421633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \t\t}\n \t}\n }\n if (!function_exists('distance')) {\n-\tfunction tgltoview($data,$data)\n+\tfunction tgltoview($data,$data1)\n \t{\n \t\tif ($data == \"\" || $data == \"0000-00-00\") {\n \t\t\treturn \"-\";\n \t\t} else {\n"
+                },
+                {
+                    "date": 1666798428920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \t\t}\n \t}\n }\n if (!function_exists('distance')) {\n-\tfunction tgltoview($data,$data1)\n+\tfunction tgltoview($data1,$data2)\n \t{\n \t\tif ($data == \"\" || $data == \"0000-00-00\") {\n \t\t\treturn \"-\";\n \t\t} else {\n"
+                },
+                {
+                    "date": 1666798434257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,14 +43,9 @@\n }\n if (!function_exists('distance')) {\n \tfunction tgltoview($data1,$data2)\n \t{\n-\t\tif ($data == \"\" || $data == \"0000-00-00\") {\n-\t\t\treturn \"-\";\n-\t\t} else {\n-\t\t\t$hasil = Date('d-m-Y', strtotime($data));\n-\t\t\treturn $hasil;\n-\t\t}\n+\t\t\n \t}\n }\n \n \n"
+                },
+                {
+                    "date": 1666798448869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,12 @@\n }\n if (!function_exists('distance')) {\n \tfunction tgltoview($data1,$data2)\n \t{\n-\t\t\n+\t\t$datetime1 = new DateTime($fdate);\n+$datetime2 = new DateTime($tdate);\n+$interval = $datetime1->diff($datetime2);\n+$days = $interval->format('%a');\n \t}\n }\n \n \n"
+                },
+                {
+                    "date": 1666798456382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,10 @@\n }\n if (!function_exists('distance')) {\n \tfunction tgltoview($data1,$data2)\n \t{\n-\t\t$datetime1 = new DateTime($fdate);\n-$datetime2 = new DateTime($tdate);\n+\t\t$datetime1 = new DateTime($data1);\n+$datetime2 = new DateTime($data2);\n $interval = $datetime1->diff($datetime2);\n $days = $interval->format('%a');\n \t}\n }\n"
+                },
+                {
+                    "date": 1666798462510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,11 +44,13 @@\n if (!function_exists('distance')) {\n \tfunction tgltoview($data1,$data2)\n \t{\n \t\t$datetime1 = new DateTime($data1);\n-$datetime2 = new DateTime($data2);\n-$interval = $datetime1->diff($datetime2);\n-$days = $interval->format('%a');\n+        $datetime2 = new DateTime($data2);\n+        $interval = $datetime1->diff($datetime2);\n+        $days = $interval->format('%a');\n+\n+        ret\n \t}\n }\n \n \n"
+                },
+                {
+                    "date": 1666798468622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n         $datetime2 = new DateTime($data2);\n         $interval = $datetime1->diff($datetime2);\n         $days = $interval->format('%a');\n \n-        ret\n+        return $days;\n \t}\n }\n \n \n"
+                },
+                {
+                    "date": 1666798483485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \t\t}\n \t}\n }\n if (!function_exists('distance')) {\n-\tfunction tgltoview($data1,$data2)\n+\tfunction distance($data1,$data2)\n \t{\n \t\t$datetime1 = new DateTime($data1);\n         $datetime2 = new DateTime($data2);\n         $interval = $datetime1->diff($datetime2);\n"
+                },
+                {
+                    "date": 1666798494255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,11 @@\n }\n if (!function_exists('distance')) {\n \tfunction distance($data1,$data2)\n \t{\n+        if ($data1 ) {\n+            # code...\n+        }\n \t\t$datetime1 = new DateTime($data1);\n         $datetime2 = new DateTime($data2);\n         $interval = $datetime1->diff($datetime2);\n         $days = $interval->format('%a');\n"
+                },
+                {
+                    "date": 1666798501944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,17 +43,17 @@\n }\n if (!function_exists('distance')) {\n \tfunction distance($data1,$data2)\n \t{\n-        if ($data1 ) {\n+        if ($data1 && $data2) {\n             # code...\n+            $datetime1 = new DateTime($data1);\n+            $datetime2 = new DateTime($data2);\n+            $interval = $datetime1->diff($datetime2);\n+            $days = $interval->format('%a');\n+    \n+            return $days;\n         }\n-\t\t$datetime1 = new DateTime($data1);\n-        $datetime2 = new DateTime($data2);\n-        $interval = $datetime1->diff($datetime2);\n-        $days = $interval->format('%a');\n-\n-        return $days;\n \t}\n }\n \n \n"
                 }
             ],
             "date": 1666631892245,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 32,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1666502464191,
@@ -136,6 +136,14 @@
                 {
                     "date": 1666757434934,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n-            $table->string('description');\n+            $table->string('description')->;\n             $table->integer('status')->nullable();\n             // 1 approf 0 rejection\n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1666803196759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n             $table->string('from_latitude');\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n-            $table->string('description')->;\n-            $table->integer('status')->nullable();\n+            $table->string('description')->nullable();\n+            $table->integer('status')->default();\n             // 1 approf 0 rejection\n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1666803255635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             $table->string('to_latitude');\n             $table->date('start_at');\n             $table->date('end_at');\n             $table->string('description')->nullable();\n-            $table->integer('status')->default();\n+            $table->integer('status')->nullable();\n             // 1 approf 0 rejection\n             $table->timestamps();\n         });\n     }\n"
                 }
             ],
             "date": 1666502464191,
