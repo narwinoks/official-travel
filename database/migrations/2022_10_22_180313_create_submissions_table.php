@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('to_latitude');
             $table->date('start_at');
             $table->date('end_at');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->integer('status')->nullable();
             // 1 approf 0 rejection
             $table->timestamps();

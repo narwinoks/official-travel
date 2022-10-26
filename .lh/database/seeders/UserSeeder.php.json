@@ -1,0 +1,58 @@
+{
+    "sourceFile": "database/seeders/UserSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1666756151252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666756157518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace Database\\Seeders;\n \n+use App\\Models\\User;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n \n class UserSeeder extends Seeder\n@@ -13,7 +14,7 @@\n      * @return void\n      */\n     public function run()\n     {\n-        \n+        $model=User::create(\n     }\n }\n"
+                },
+                {
+                    "date": 1666756278972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $model=User::create(\n+        $model=User::create([\n+            'username' =>'wina'\n+        ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666756288735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Models\\User;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\Hash;\n \n class UserSeeder extends Seeder\n {\n     /**\n@@ -15,8 +16,9 @@\n      */\n     public function run()\n     {\n         $model=User::create([\n-            'username' =>'wina'\n+            'username' =>'winarno',\n+            'password' =>Hash::make\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666756320171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     public function run()\n     {\n         $model=User::create([\n             'username' =>'winarno',\n-            'password' =>Hash::make\n+            'password' =>Hash::make('password')\n         ]);\n+        $model-\n     }\n }\n"
+                },
+                {
+                    "date": 1666756353881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         $model=User::create([\n             'username' =>'winarno',\n             'password' =>Hash::make('password')\n         ]);\n-        $model-\n+        $model->attachRole\n     }\n }\n"
+                },
+                {
+                    "date": 1666756377173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         $model=User::create([\n             'username' =>'winarno',\n             'password' =>Hash::make('password')\n         ]);\n-        $model->attachRole\n+        $model->attachRole('admin')\n     }\n }\n"
+                },
+                {
+                    "date": 1666756455406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         $model=User::create([\n             'username' =>'winarno',\n             'password' =>Hash::make('password')\n         ]);\n-        $model->attachRole('admin')\n+        $model->attachRole(1);\n     }\n }\n"
+                },
+                {
+                    "date": 1666756476992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         $model=User::create([\n             'username' =>'winarno',\n             'password' =>Hash::make('password')\n         ]);\n-        $model->attachRole(1);\n+        // $model->attachRole(1);\n     }\n }\n"
+                },
+                {
+                    "date": 1666756483271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         $model=User::create([\n             'username' =>'winarno',\n             'password' =>Hash::make('password')\n-        ]);\n+        ])->attachRole(1);\n         // $model->attachRole(1);\n     }\n }\n"
+                },
+                {
+                    "date": 1666756503222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         $model=User::create([\n             'username' =>'winarno',\n             'password' =>Hash::make('password')\n-        ])->attachRole(1);\n+        ]);\n         // $model->attachRole(1);\n     }\n }\n"
+                }
+            ],
+            "date": 1666756151252,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass UserSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        \n    }\n}\n"
+        }
+    ]
+}

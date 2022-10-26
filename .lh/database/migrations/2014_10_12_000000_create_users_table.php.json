@@ -1,0 +1,30 @@
+{
+    "sourceFile": "database/migrations/2014_10_12_000000_create_users_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666756110393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666756299591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,12 @@\n     public function up()\n     {\n         Schema::create('users', function (Blueprint $table) {\n             $table->id();\n-            $table->string('usr');\n+            $table->string('username');\n             $table->string('email')->unique();\n             $table->timestamp('email_verified_at')->nullable();\n             $table->string('password');\n-            $table->rememberToken();\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666756526583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,13 @@\n     public function up()\n     {\n         Schema::create('users', function (Blueprint $table) {\n             $table->id();\n-            $table->string('username');\n+            $table->string('us');\n             $table->string('email')->unique();\n             $table->timestamp('email_verified_at')->nullable();\n             $table->string('password');\n+            $table->rememberToken();\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1666756589368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,10 @@\n     public function up()\n     {\n         Schema::create('users', function (Blueprint $table) {\n             $table->id();\n-            $table->string('us');\n-            $table->string('email')->unique();\n-            $table->timestamp('email_verified_at')->nullable();\n+            $table->string('username');\n             $table->string('password');\n-            $table->rememberToken();\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1666756110393,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('users', function (Blueprint $table) {\n            $table->id();\n            $table->string('usr');\n            $table->string('email')->unique();\n            $table->timestamp('email_verified_at')->nullable();\n            $table->string('password');\n            $table->rememberToken();\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('users');\n    }\n};\n"
+        }
+    ]
+}

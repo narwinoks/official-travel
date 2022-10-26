@@ -6,6 +6,7 @@ use DateTime;
 use App\Models\City;
 use App\Models\Submission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
@@ -46,15 +47,13 @@ class DataController extends Controller
     }
 
     public function NewSubmission(Request $request){
-        $page = ($request->start + 10) / 8;
-        $totalRecord=Submission::where('status','=',null)->select('count(*) as allcount')->count();
-        $records=Submission:: get(['*'],'page',$page);
+        $records=Submission::where('status','=',null)->with('User')->get();
         // dd($records);
         $return=[];
         foreach ($records as $key => $record) {
-            $action='<a href="JavaScript " class="btn btn-primary btn-sm mx-1">Show</a>';
+            $action='<a href="'.route('submission.approve',$record->id).'" class="btn btn-primary btn-sm mx-1">Show</a>';
             $id = $record->id;
-            $name = $record->User->name;
+            $name = $record->User->username;
             $from = $record->FromCity->city;
             $to = $record->ToCity->city;
             $start_at=\DateTime::createFromFormat('Y-m-d', $record->start_at)->format('d-m-Y');
@@ -74,57 +73,81 @@ class DataController extends Controller
     //  echo json_encode($data_arr);
     //  exit;
         $output['draw'] = $request->draw; 
-        $output['recordsTotal'] = $totalRecord;
-        $output['recordsFiltered'] = $totalRecord;
         $output['data']=$return;
         // $response['data']=$return;
         echo json_encode($output);
     }
 
     public function HistorySubmission(Request $request){
-        $records=Submission::all();
-        // dd($records);
+        $records=Submission::where('status','<>',null)->with('user')->get();
         $return=[];
-        foreach ($records as $key => $record) {
-            $action='<a href="JavaScript " class="btn btn-primary btn-sm mx-1">Show</a>';
+            foreach ($records as $key => $record) {
+                if ($record->status == 1) {
+                    $status ='<span class="badge badge-success">Approve</span>';
+                } else {
+                $status='<span class="badge badge-danger">Reaject</span>';
+            }
+            
             $id = $record->id;
-            $name = $record->User->name;
+            $name = $record->User->username;
             $from = $record->FromCity->city;
             $to = $record->ToCity->city;
             $start_at=\DateTime::createFromFormat('Y-m-d', $record->start_at)->format('d-m-Y');
             $end_at=\DateTime::createFromFormat('Y-m-d', $record->end_at)->format('d-m-Y');
             $description = $record->description;
-            if ($record->status == 1) {
-                # code...
-                $status ='<span class="badge badge-primary">Approve</span>';
-            }else{
-                $status ='<span class="badge badge-danger">Reaject</span>';
-            }
-
             $return[] = array(
-                "id" => $id,
+                "id" => $key + 1,
                 "name" =>$name,
                 "city" => $from .'  '.'To'.'  '. $to,
                 'date'=> $start_at .' '. 'To ' . $end_at  .' '. '(' . GetDifferenceDate($record->start_at,$record->end_at) . ') ' ,
                 "description" => $description,
                 "status"=>$status
             );
-         }
-
-    //  echo json_encode($data_arr);
-    //  exit;
+        }
+        
+        //  echo json_encode($data_arr);
+        //  exit;
         $output['draw'] = $request->draw; 
         $output['data']=$return;
         // $response['data']=$return;
         echo json_encode($output);
+        
     }
-
-    public function Submission(){
-        $branch = Submission::orderBy('id', 'desc')->get();
-
-        return datatables()->of($branch)
-            ->addIndexColumn()
-            ->toJson();
-
+    public function MySubmission(Request $request){
+        $records=Submission::where('user_id','=',Auth::user()->id)->with('user')->get();
+        $return=[];
+            foreach ($records as $key => $record) {
+                if ($record->status == '1') {
+                    $status ='<span class="badge badge-success">Approve</span>';
+                } elseif ($record->status == '0'){
+                $status='<span class="badge badge-danger">Reaject</span>';
+            }else{
+                $status='<span class="badge badge-warning">Panding</span>';
+            }
+            
+            $id = $record->id;
+            $name = $record->User->username;
+            $from = $record->FromCity->city;
+            $to = $record->ToCity->city;
+            $start_at=\DateTime::createFromFormat('Y-m-d', $record->start_at)->format('d-m-Y');
+            $end_at=\DateTime::createFromFormat('Y-m-d', $record->end_at)->format('d-m-Y');
+            $description = $record->description;
+            $return[] = array(
+                "id" => $key + 1,
+                "name" =>$name,
+                "city" => $from .'  '.'To'.'  '. $to,
+                'date'=> $start_at .' '. 'To ' . $end_at  .' '. '(' . GetDifferenceDate($record->start_at,$record->end_at) . ') ' ,
+                "description" => $description,
+                "status"=>$status
+            );
+        }
+        
+        //  echo json_encode($data_arr);
+        //  exit;
+        $output['draw'] = $request->draw; 
+        $output['data']=$return;
+        // $response['data']=$return;
+        echo json_encode($output);
+        
     }
 }

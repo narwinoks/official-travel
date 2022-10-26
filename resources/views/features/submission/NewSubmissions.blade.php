@@ -15,7 +15,7 @@
                                 <th>City</th>
                                 <th>Date</th>
                                 <th>Description</th>
-                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -34,7 +34,7 @@
                 processing: true,
                 responsive: true,
                 //  serverSide: true,
-                ajax: "{{ route('data.mysubmission') }}",
+                ajax: "{{ route('data.newsubmission') }}",
                 columns: [{
                         data: 'id',
                     },
@@ -51,7 +51,7 @@
                         data: 'description'
                     },
                     {
-                        data: 'status'
+                        data: 'action'
                     },
                 ]
             });

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1666277560646,
@@ -24,6 +24,22 @@
                 {
                     "date": 1666490724417,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,9 @@\n \n             // Attach all permissions to the role\n             $role->permissions()->sync($permissions);\n \n-        f (Config::get('laratrust_seeder.create_users')) {\n-\n+         if(Config::get('laratrust_seeder.create_users')) {\n                 $this->command->info(\"Creating '{$key}' user\");\n                 // Create default user for each role\n                 $user = \\App\\Models\\User::create([\n                     'name' => ucwords(str_replace('_', ' ', $key)),\n"
+                },
+                {
+                    "date": 1666756131604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n \n                     $permissionValue = $mapPermission->get($perm);\n \n                     $permissions[] = \\App\\Models\\Permission::firstOrCreate([\n-                        'name' => $module . '-' . $permissionValue,\n+                        'username' => $module . '-' . $permissionValue,\n                         'display_name' => ucfirst($permissionValue) . ' ' . ucfirst($module),\n                         'description' => ucfirst($permissionValue) . ' ' . ucfirst($module),\n                     ])->id;\n \n"
+                },
+                {
+                    "date": 1666756311085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,8 @@\n                 $this->command->info(\"Creating '{$key}' user\");\n                 // Create default user for each role\n                 $user = \\App\\Models\\User::create([\n                     'name' => ucwords(str_replace('_', ' ', $key)),\n-                    'email' => $key.'@app.com',\n                     'password' => bcrypt('password')\n                 ]);\n                 $user->attachRole($role);\n             }\n"
+                },
+                {
+                    "date": 1666756570067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,9 @@\n                 $this->command->info(\"Creating '{$key}' user\");\n                 // Create default user for each role\n                 $user = \\App\\Models\\User::create([\n                     'name' => ucwords(str_replace('_', ' ', $key)),\n+                    'email' => $key.'@app.com',\n                     'password' => bcrypt('password')\n                 ]);\n                 $user->attachRole($role);\n             }\n"
+                },
+                {
+                    "date": 1666756575354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n \n                     $permissionValue = $mapPermission->get($perm);\n \n                     $permissions[] = \\App\\Models\\Permission::firstOrCreate([\n-                        'username' => $module . '-' . $permissionValue,\n+                        'name' => $module . '-' . $permissionValue,\n                         'display_name' => ucfirst($permissionValue) . ' ' . ucfirst($module),\n                         'description' => ucfirst($permissionValue) . ' ' . ucfirst($module),\n                     ])->id;\n \n@@ -63,9 +63,9 @@\n          if(Config::get('laratrust_seeder.create_users')) {\n                 $this->command->info(\"Creating '{$key}' user\");\n                 // Create default user for each role\n                 $user = \\App\\Models\\User::create([\n-                    'name' => ucwords(str_replace('_', ' ', $key)),\n+                    'username' => ucwords(str_replace('_', ' ', $key)),\n                     'email' => $key.'@app.com',\n                     'password' => bcrypt('password')\n                 ]);\n                 $user->attachRole($role);\n"
                 }
             ],
             "date": 1666277560646,

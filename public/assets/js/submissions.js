@@ -3,29 +3,6 @@ $(function () {
 
     $(function () {
         $("#table-2").removeClass("d-none");
-        // // // ajax table 1
-        // $("#dataTableExample").DataTable({
-        //     aLengthMenu: [
-        //         [10, 30, 50, -1],
-        //         [10, 30, 50, "All"],
-        //     ],
-        //     iDisplayLength: 10,
-        //     language: {
-        //         search: "",
-        //     },
-        // });
-        // // ajax table 2
-        // $("#dataTableExample2").DataTable({
-        //     aLengthMenu: [
-        //         [10, 30, 50, -1],
-        //         [10, 30, 50, "All"],
-        //     ],
-        //     iDisplayLength: 10,
-        //     language: {
-        //         search: "",
-        //     },
-        // });
-        // ajax show hide tables;
         $("#form-1").click(function () {
             $("#table-1").removeClass("d-none");
             $("#table-2").addClass("d-none");
@@ -35,7 +12,7 @@ $(function () {
         $("#form-2").click(function () {
             $("#table-2").removeClass("d-none");
             $("#table-1").addClass("d-none");
-            console.log("okee");
+             
         });
 
         $("#dataTableExample").each(function () {

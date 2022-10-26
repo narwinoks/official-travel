@@ -12,7 +12,7 @@ class AuthController extends Controller
     }
     public function ProcessLogin(Request $request){
         $credentials = $request->validate([
-            'username' => ['required', 'email'],
+            'username' => ['required'],
             'password' => ['required'],
         ]);
         if (Auth::attempt($credentials)) {
@@ -20,5 +20,15 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
         return back()->with('login erorr', 'Login Faild!');
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

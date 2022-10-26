@@ -1,0 +1,62 @@
+{
+    "sourceFile": "resources/views/features/submission/NewSubmissions.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1666712704726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666712710775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,8 @@\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n                                 <th>Nama Kota</th>\n-                                <th>Provinsi</th>\n-                                <th>Pulau</th>\n-                                <th>Latitude</th>\n-                                <th>Logtitude</th>\n-                                <th>Luar Negri</th>\n                                 <th>Aksi</th>\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n"
+                },
+                {
+                    "date": 1666712880628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n                     <table id=\"dataTableExample\" class=\"table\">\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n-                                <th>Nama Kota</th>\n-                                <th>Aksi</th>\n+                                <th>Nama</th>\n+                                <th>Kota</th>\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n                         @endforeach\n"
+                },
+                {
+                    "date": 1666712891626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n                             <tr>\n                                 <th>No</th>\n                                 <th>Nama</th>\n                                 <th>Kota</th>\n+                                <th>Tanggal</th>\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n                         @endforeach\n"
+                },
+                {
+                    "date": 1666712901969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n                                 <th>No</th>\n                                 <th>Nama</th>\n                                 <th>Kota</th>\n                                 <th>Tanggal</th>\n+                                <th>Keterangan</th>\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n                         @endforeach\n"
+                },
+                {
+                    "date": 1666712957041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,13 @@\n                                 <th>Nama</th>\n                                 <th>Kota</th>\n                                 <th>Tanggal</th>\n                                 <th>Keterangan</th>\n+                                <th>Aksi</th>\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n+                        \n                         @endforeach\n                         <tbody>\n                         </tbody>\n                     </table>\n"
+                },
+                {
+                    "date": 1666712962836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n                                 <th>Aksi</th>\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n-                        \n+                            <tr>\n+                                <td></td>\n+                            </tr>\n                         @endforeach\n                         <tbody>\n                         </tbody>\n                     </table>\n"
+                },
+                {
+                    "date": 1666712969333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n                             <tr>\n-                                <td></td>\n+                                <td>{{ $loop->iterati }}</td>\n                             </tr>\n                         @endforeach\n                         <tbody>\n                         </tbody>\n"
+                },
+                {
+                    "date": 1666713002753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n                             </tr>\n                         </thead>\n                         @foreach ($submissions as $submission)\n                             <tr>\n-                                <td>{{ $loop->iterati }}</td>\n+                                <td>{{ $loop->iteration }}</td>\n+                                <td></td>\n                             </tr>\n                         @endforeach\n                         <tbody>\n                         </tbody>\n"
+                },
+                {
+                    "date": 1666713016459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                         </thead>\n                         @foreach ($submissions as $submission)\n                             <tr>\n                                 <td>{{ $loop->iteration }}</td>\n-                                <td></td>\n+                                <td>{{ $submission->name }}</td>\n                             </tr>\n                         @endforeach\n                         <tbody>\n                         </tbody>\n"
+                },
+                {
+                    "date": 1666713023201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                         @foreach ($submissions as $submission)\n                             <tr>\n                                 <td>{{ $loop->iteration }}</td>\n                                 <td>{{ $submission->name }}</td>\n-                                <td>{{  }}</td>\n+                                <td>{{ $ }}</td>\n                             </tr>\n                         @endforeach\n                         <tbody>\n                         </tbody>\n"
+                },
+                {
+                    "date": 1666713057180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                         @foreach ($submissions as $submission)\n                             <tr>\n                                 <td>{{ $loop->iteration }}</td>\n                                 <td>{{ $submission->name }}</td>\n-                                <td>{{ $submission->FromCity->City }} ->  {{  }}</td>\n+                                <td>{{ $submission->FromCity->City }} ->  {{ $ }}</td>\n                             </tr>\n                         @endforeach\n                         <tbody>\n                         </tbody>\n"
+                }
+            ],
+            "date": 1666712704726,
+            "name": "Commit-0",
+            "content": "@extends('templates.main')\n@section('content')\n    <div class=\"col-md-12 grid-margin stretch-card\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <h6 class=\"card-title\">List Master City</h6>\n                <p class=\"card-description\">Enter Your Master Data From City</p>\n                <a href=\"{{ route('city.create') }}\" class=\"btn btn-success my-3 btn-sm\">Add Data</a>\n                <div class=\"table\">\n                    <table id=\"dataTableExample\" class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>No</th>\n                                <th>Nama Kota</th>\n                                <th>Provinsi</th>\n                                <th>Pulau</th>\n                                <th>Latitude</th>\n                                <th>Logtitude</th>\n                                <th>Luar Negri</th>\n                                <th>Aksi</th>\n                            </tr>\n                        </thead>\n                        @foreach ($submissions as $submission)\n                        @endforeach\n                        <tbody>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n    </div>\n@endsection\n@push('scripts')\n    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n    <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n    <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n@endpush\n@push('styles')\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n@endpush\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 46,
             "patches": [
                 {
                     "date": 1666518336069,
@@ -68,6 +68,130 @@
                 {
                     "date": 1666710550296,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::where('status','=')\n+        $submission=Submission::where('status','=',null)->get();\n         return view('features.submission.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666712662344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     // \n     public function index(){\n         // $\n         $submission=Submission::where('status','=',null)->get();\n-        return view('features.submission.index');\n+        return view('features.submission.new');\n     }\n }\n"
+                },
+                {
+                    "date": 1666712672713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     // \n     public function index(){\n         // $\n         $submission=Submission::where('status','=',null)->get();\n-        return view('features.submission.new');\n+        return view('features.submission.NewSubmission');\n     }\n }\n"
+                },
+                {
+                    "date": 1666712689008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     // \n     public function index(){\n         // $\n         $submission=Submission::where('status','=',null)->get();\n-        return view('features.submission.NewSubmission');\n+        return view('features.submission.NewSubmissions');\n     }\n }\n"
+                },
+                {
+                    "date": 1666712722946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::where('status','=',null)->get();\n+        $submission=Submission::where('status','=',null)->with($value)->get();\n         return view('features.submission.NewSubmissions');\n     }\n }\n"
+                },
+                {
+                    "date": 1666712918365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::where('status','=',null)->with($value)->get();\n-        return view('features.submission.NewSubmissions');\n+        $submission=Submission::where('status','=',null)->with('user')->get();\n+        return view('features.submission.NewSubmissions',con);\n     }\n }\n"
+                },
+                {
+                    "date": 1666712925711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     // \n     public function index(){\n         // $\n         $submission=Submission::where('status','=',null)->with('user')->get();\n-        return view('features.submission.NewSubmissions',con);\n+        return view('features.submission.NewSubmissions',compact('s'));\n     }\n }\n"
+                },
+                {
+                    "date": 1666712942934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     // \n     public function index(){\n         // $\n-        $submission=Submission::where('status','=',null)->with('user')->get();\n-        return view('features.submission.NewSubmissions',compact('s'));\n+        $submissions=Submission::where('status','=',null)->with('user')->get();\n+        return view('features.submission.NewSubmissions',compact('submission'));\n     }\n }\n"
+                },
+                {
+                    "date": 1666713703199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,9 @@\n     // \n     public function index(){\n         // $\n         $submissions=Submission::where('status','=',null)->with('user')->get();\n-        return view('features.submission.NewSubmissions',compact('submission'));\n+        return view('features.submission.NewSubmissions',compact('submissions'));\n     }\n+\n+    public function newSubmissions\n }\n"
+                },
+                {
+                    "date": 1666713708321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n         $submissions=Submission::where('status','=',null)->with('user')->get();\n         return view('features.submission.NewSubmissions',compact('submissions'));\n     }\n \n-    public function newSubmissions\n+    public function All\n }\n"
+                },
+                {
+                    "date": 1666713713512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n         $submissions=Submission::where('status','=',null)->with('user')->get();\n         return view('features.submission.NewSubmissions',compact('submissions'));\n     }\n \n-    public function All\n+    public function AllSub\n }\n"
+                },
+                {
+                    "date": 1666713718848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n         $submissions=Submission::where('status','=',null)->with('user')->get();\n         return view('features.submission.NewSubmissions',compact('submissions'));\n     }\n \n-    public function AllSub\n+    public function AllSubmissions(){\n }\n"
+                },
+                {
+                    "date": 1666713724993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,11 @@\n {\n     // \n     public function index(){\n         // $\n-        $submissions=Submission::where('status','=',null)->with('user')->get();\n         return view('features.submission.NewSubmissions',compact('submissions'));\n     }\n \n     public function AllSubmissions(){\n+\n+    }\n }\n"
+                },
+                {
+                    "date": 1666713732716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,12 @@\n {\n     // \n     public function index(){\n         // $\n-        return view('features.submission.NewSubmissions',compact('submissions'));\n+        return view('features.submission.NewSubmissions');\n     }\n-\n+    \n     public function AllSubmissions(){\n+        return view('features.submission.NewSubmissions');\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666713740981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n         return view('features.submission.NewSubmissions');\n     }\n     \n     public function AllSubmissions(){\n-        return view('features.submission.NewSubmissions');\n+        return view('features.submission.HistorySubmissions');\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666714803846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,7 @@\n     public function AllSubmissions(){\n         return view('features.submission.HistorySubmissions');\n \n     }\n+\n+    public function create\n }\n"
+                },
+                {
+                    "date": 1666714809986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,8 @@\n         return view('features.submission.HistorySubmissions');\n \n     }\n \n-    public function create\n+    public function create(){\n+        return\n+    }\n }\n"
+                },
+                {
+                    "date": 1666714815137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,8 @@\n \n     }\n \n     public function create(){\n-        return\n+        return view('features.submission.HistorySubmissions');\n+\n     }\n }\n"
+                },
+                {
+                    "date": 1666714837688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,7 @@\n \n     }\n \n     public function create(){\n-        return view('features.submission.HistorySubmissions');\n-\n+        return view('features.submission.create');\n     }\n }\n"
+                },
+                {
+                    "date": 1666716367858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\City;\n use App\\Models\\Submission;\n use Illuminate\\Http\\Request;\n \n class SubmissionsController extends Controller\n@@ -18,7 +19,8 @@\n \n     }\n \n     public function create(){\n+        $city=City\n         return view('features.submission.create');\n     }\n }\n"
+                },
+                {
+                    "date": 1666716375093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n \n     }\n \n     public function create(){\n-        $city=City\n+        $city=City::s\n         return view('features.submission.create');\n     }\n }\n"
+                },
+                {
+                    "date": 1666716380800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n \n     }\n \n     public function create(){\n-        $city=City::s\n+        $city=City::select('id')\n         return view('features.submission.create');\n     }\n }\n"
+                },
+                {
+                    "date": 1666716386925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n \n     }\n \n     public function create(){\n-        $city=City::select('id')\n+        $city=City::select('id','city')->get();\n         return view('features.submission.create');\n     }\n }\n"
+                },
+                {
+                    "date": 1666716395394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,7 @@\n     }\n \n     public function create(){\n         $city=City::select('id','city')->get();\n-        return view('features.submission.create');\n+        return view('features.submission.create',compact('city'));\n     }\n }\n"
+                },
+                {
+                    "date": 1666749325690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,7 @@\n     public function create(){\n         $city=City::select('id','city')->get();\n         return view('features.submission.create',compact('city'));\n     }\n+\n+    public function Show\n }\n"
+                },
+                {
+                    "date": 1666749331801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n         $city=City::select('id','city')->get();\n         return view('features.submission.create',compact('city'));\n     }\n \n-    public function Show\n+    public function Approve()\n }\n"
+                },
+                {
+                    "date": 1666749339966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,10 @@\n     public function create(){\n         $city=City::select('id','city')->get();\n         return view('features.submission.create',compact('city'));\n     }\n+    \n+    public function Approve(){\n+        return view('features.submission.create',compact('city'));\n \n-    public function Approve()\n+    }\n }\n"
+                },
+                {
+                    "date": 1666749346566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,8 @@\n         return view('features.submission.create',compact('city'));\n     }\n     \n     public function Approve(){\n-        return view('features.submission.create',compact('city'));\n+        return view('features.submission.App',compact('city'));\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666749355684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,8 @@\n         return view('features.submission.create',compact('city'));\n     }\n     \n     public function Approve(){\n-        return view('features.submission.App',compact('city'));\n+        return view('features.submission.Approve';\n \n     }\n }\n"
+                },
+                {
+                    "date": 1666755356452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,10 @@\n         return view('features.submission.create',compact('city'));\n     }\n     \n     public function Approve(){\n-        return view('features.submission.Approve';\n+        return view('features.submission.Approve');\n \n     }\n+\n+    public function Store\n }\n"
+                },
+                {
+                    "date": 1666755363049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,7 @@\n \n     }\n \n     public function Store(){\n-        $validate\n+        $validate=\n     }\n }\n"
+                },
+                {
+                    "date": 1666755684823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n             'form_city_id'=>'required',\n             'to_city_id' =>'required'\n         ]);\n \n-        ret\n+        return\n     }\n }\n"
                 }
             ],
             "date": 1666518336069,

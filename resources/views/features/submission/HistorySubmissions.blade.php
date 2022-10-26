@@ -34,7 +34,7 @@
                 processing: true,
                 responsive: true,
                 //  serverSide: true,
-                ajax: "{{ route('data.mysubmission') }}",
+                ajax: "{{ route('data.allsubmission') }}",
                 columns: [{
                         data: 'id',
                     },
