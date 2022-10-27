@@ -36,21 +36,21 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('city.index') }}" class="nav-link">
-              <i class="link-icon" data-feather="message-square"></i>
+              <i class="link-icon" data-feather="sun"></i>
               <span class="link-title">city</span>
             </a>
           </li>
           @elseif(Auth::User()->hasRole('pegawai'))
           <li class="nav-item">
             <a href="{{ route('submission.index') }}" class="nav-link">
-              <i class="link-icon" data-feather="message-square"></i>
+              <i class="link-icon" data-feather="align-right"></i>
               <span class="link-title">My Submission</span>
             </a>
           </li>
           @elseif(Auth::User()->hasRole('admin'))
           <li class="nav-item">
             <a href="{{ route('user.index') }}" class="nav-link">
-              <i class="link-icon" data-feather="message-square"></i>
+              <i class="link-icon" data-feather="users"></i>
               <span class="link-title">User</span>
             </a>
           </li>

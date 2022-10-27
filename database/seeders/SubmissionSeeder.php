@@ -16,7 +16,7 @@ class SubmissionSeeder extends Seeder
     public function run()
     {
         $data=Submission::create([
-            'user_id' => 3,
+            'user_id' => 4,
             'from_city_id'=>1,
             'to_city_id'=>2,
             'from_longitude'=>'110.80856207006029',
@@ -28,7 +28,7 @@ class SubmissionSeeder extends Seeder
             'description'=>'this descrition'
         ]);
             $data=Submission::create([
-                'user_id' => 3,
+                'user_id' => 4,
                 'from_city_id'=>2,
                 'to_city_id'=>1,
                 'from_longitude'=>'107.60762330092848',
@@ -40,7 +40,7 @@ class SubmissionSeeder extends Seeder
                 'description'=>'this description',
         ]);
             $data=Submission::create([
-                'user_id' => 3,
+                'user_id' => 4,
                 'from_city_id'=>1,
                 'to_city_id'=>3,
                 'from_longitude'=>'110.80856207006029',
@@ -52,7 +52,7 @@ class SubmissionSeeder extends Seeder
                 'description'=>'this descripito',
         ]);
             $data=Submission::create([
-                'user_id' => 3,
+                'user_id' => 4,
                 'from_city_id'=>1,
                 'to_city_id'=>4,
                 'from_longitude'=>'110.80856207006029',
@@ -64,7 +64,7 @@ class SubmissionSeeder extends Seeder
                 'description'=>'this descripito',
         ]);
             $data=Submission::create([
-                'user_id' => 3,
+                'user_id' => 4,
                 'from_city_id'=>1,
                 'to_city_id'=>5,
                 'from_longitude'=>'110.80856207006029',
