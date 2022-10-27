@@ -17,6 +17,7 @@
                                 <th>Date</th>
                                 <th>Description</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -53,6 +54,9 @@
                     },
                     {
                         data: 'status'
+                    },
+                    {
+                        data: 'action'
                     },
                 ]
             });

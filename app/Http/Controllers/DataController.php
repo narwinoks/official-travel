@@ -124,7 +124,11 @@ class DataController extends Controller
             }else{
                 $status='<span class="badge badge-warning">Panding</span>';
             }
-            
+            if ($record->status != '1') {
+                $button ='  <a href="'.route('submission.edit',$record->id).'" class="btn btn-primary">Edit</a>';
+            }else{
+                $button ='';
+            }
             $id = $record->id;
             $name = $record->User->username;
             $from = $record->FromCity->city;
@@ -138,10 +142,10 @@ class DataController extends Controller
                 "city" => $from .'  '.'To'.'  '. $to,
                 'date'=> $start_at .' '. 'To ' . $end_at  .' '. '(' . GetDifferenceDate($record->start_at,$record->end_at) . ') ' ,
                 "description" => $description,
-                "status"=>$status
+                "status"=>$status,
+                'action'=>$button
             );
         }
-        
         //  echo json_encode($data_arr);
         //  exit;
         $output['draw'] = $request->draw; 

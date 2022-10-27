@@ -100,9 +100,9 @@ class SubmissionsController extends BaseController
         ]);
 
         if($model){
-            return to_route('submission.index')->withSuccess("Create New City Successfully !!");
+            return to_route('submission.index')->withSuccess("Create New Submission Successfully !!");
         }else{
-            return to_route('submission.index')->withDanger("Failed Create New City!!");
+            return to_route('submission.index')->withDanger("Failed Create New Submission!!");
         }
     }
 
@@ -116,5 +116,38 @@ class SubmissionsController extends BaseController
             session()->flash('danger','Reaject Submission Successfully Reaject !!');
         }
 
+    }
+
+    public function edit($id){
+        $city=City::select('id','city')->get();
+        $submission=Submission::find($id);
+        return view('features.submission.edit',compact('city','submission'));
+    }
+
+    public function  update(Request $request){
+        $validated = $request->validate([
+            'from_city_id' => 'required'
+        ]);
+        $FromCity=City::find($request->from_city_id);
+        $ToCity=City::find($request->to_city_id);
+        $model=Submission::find($request->id);
+        $model->update([
+            'user_id'=>$request->user()->id,
+            'from_city_id'=>$request->from_city_id,
+            'to_city_id'=>$request->to_city_id,
+            'from_longitude'=>$FromCity->longitude,
+            'to_longtitude'=>$ToCity->longitude,
+            'from_latitude'=>$FromCity->latitude,
+            'to_latitude'=>$ToCity->latitude,
+            'start_at'=>$request->from_date,
+            'end_at'=>$request->end_date,
+            'Description'=>$request->description
+        ]);
+
+        if($model){
+            return to_route('submission.index')->withSuccess("Update New Submission Successfully !!");
+        }else{
+            return to_route('submission.index')->withDanger("Failed update New Submission!!");
+        }
     }
 }

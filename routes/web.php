@@ -45,4 +45,6 @@ Route::middleware('auth')->controller(SubmissionsController::class)->prefix('sub
     Route::get('/approve/{id}','Approve')->name('submission.approve')->middleware('role:sdm');
     Route::post('/approve','ApproveStore')->name('submission.approve.store')->middleware('role:sdm');
     Route::post('/store','store')->name('submission.store');
+    Route::get('/edit/{id}','edit')->name('submission.edit');
+    Route::put('/edit','update')->name('submission.update');
 });
