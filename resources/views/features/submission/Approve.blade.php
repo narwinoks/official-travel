@@ -3,8 +3,8 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title"> Master City</h6>
-                <p class="card-description">Enter Your Data For City</p>
+                <h6 class="card-title"> Master Approve</h6>
+                <p class="card-description">Approve Your Submission</p>
                 <div class="card-body">
                     <form class="forms-sample" action="{{ route('city.store') }}" method="POST">
                         @csrf
@@ -85,11 +85,12 @@
                                 </table>
                                 <p class="small text-danger"> {{ $data['status'] }}</p>
                                 <div class="mb-3 text-center mt-5">
-                                    @if ($submission->status != 0 || $submission->status != 1)
+                                    @if ($submission->status == null)
                                         <button class="btn btn-primary mr-2 approve_submission"
                                             id="{{ $submission->id }}">Approve</button>
                                         <button class="btn btn-danger reaject_submission"
                                             id="{{ $submission->id }}">Reajct</button>
+                                    @else
                                     @endif
                                 </div>
                             </div>
