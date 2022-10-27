@@ -3,10 +3,9 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title"> Master City</h6>
-                <p class="card-description">Enter Your Data For City</p>
+                <h6 class="card-title"> Master Users</h6>
+                <p class="card-description">Enter Your Data For User</p>
                 <div class="card-body">
-                    <h6 class="card-title">Basic Form</h6>
                     <form class="forms-sample" action="{{ route('user.store') }}" method="POST">
                         @csrf
                         @method('POST')

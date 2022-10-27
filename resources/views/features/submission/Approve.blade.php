@@ -6,7 +6,6 @@
                 <h6 class="card-title"> Master City</h6>
                 <p class="card-description">Enter Your Data For City</p>
                 <div class="card-body">
-                    <h6 class="card-title">Basic Form</h6>
                     <form class="forms-sample" action="{{ route('city.store') }}" method="POST">
                         @csrf
                         @method('POST')
