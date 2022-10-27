@@ -37,7 +37,7 @@ class SubmissionsController extends BaseController
             case  ($distance <= 60):
                 $data=[
                     'satuan'=>'rp',
-                    'nominal'=>'',
+                    'nominal'=>'0',
                     'status'=>'perjalanan dekat'
                 ];
                 break;
