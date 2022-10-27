@@ -1,0 +1,222 @@
+{
+    "sourceFile": "app/Http/Controllers/UserController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 51,
+            "patches": [
+                {
+                    "date": 1666839408267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666839414687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        return view\n+        return view('features\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666839420587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        return view('features\n+        return view('features.user.index\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666839434388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        return view('features.user.index\n+        \n+        return view('features.users.index');\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666839442848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\User;\n use Illuminate\\Http\\Request;\n \n class UserController extends Controller\n {\n@@ -12,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        \n+        $users=User::all()\n         return view('features.users.index');\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666839453152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::all()\n-        return view('features.users.index');\n+        $users=User::all();\n+        return view('features.users.index',compact('users'));\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666839568117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::all();\n+        $users=User::with();\n         return view('features.users.index',compact('users'));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666839574450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::with();\n+        $users=User::with('User')->get();\n         return view('features.users.index',compact('users'));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666839589351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::with('User')->get();\n+        $users=User::with('Role')->get();\n         return view('features.users.index',compact('users'));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666839926870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::with('Role')->get();\n+        $users=User::;\n         return view('features.users.index',compact('users'));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666839934462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::;\n+        $users=User::all();\n+        $user\n         return view('features.users.index',compact('users'));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840235563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      */\n     public function index()\n     {\n         $users=User::all();\n-        $user\n+        // $user->get\n         return view('features.users.index',compact('users'));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840353647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::all();\n+        $users=User::get;\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n \n"
+                },
+                {
+                    "date": 1666840362402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get;\n+        $users=User::get()->roles;\n+        dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n \n"
+                },
+                {
+                    "date": 1666840381290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get()->roles;\n+        $users=User::get()->roles();\n         dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n"
+                },
+                {
+                    "date": 1666840394712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get()->roles();\n+        $users=User::get()->roles-;\n         dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n"
+                },
+                {
+                    "date": 1666840411310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get()->roles-;\n+        $users=User::get()->toArray();;\n         dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n"
+                },
+                {
+                    "date": 1666840418747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get()->toArray();;\n+        $users=User::get()->roles->toArray();\n         dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n"
+                },
+                {
+                    "date": 1666840430606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get()->roles->toArray();\n+        $users=User::get();\n         dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n"
+                },
+                {
+                    "date": 1666840437909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $users=User::get();\n-        dd($users);\n+        $users=User::all();\n+        // dd($users);\n         // $user->get\n         return view('features.users.index',compact('users'));\n     }\n \n"
+                },
+                {
+                    "date": 1666840633522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        //\n+        return view('features.users.index',compact('users'));\n+        \n     }\n \n     /**\n      * Store a newly created resource in storage.\n"
+                },
+                {
+                    "date": 1666840649773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\Role;\n use App\\Models\\User;\n use Illuminate\\Http\\Request;\n \n class UserController extends Controller\n@@ -26,9 +27,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        return view('features.users.index',compact('users'));\n+        $roles=Role::all();\n+        return view('features.users.create');\n         \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840655734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      */\n     public function create()\n     {\n         $roles=Role::all();\n-        return view('features.users.create');\n+        return view('features.users.create',con);\n         \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840661980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      */\n     public function create()\n     {\n         $roles=Role::all();\n-        return view('features.users.create',con);\n+        return view('features.users.create',compact('roles'));\n         \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840671716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function store(Request $request)\n     {\n-        //\n+        $\n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666840679839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function store(Request $request)\n     {\n-        $\n+        $valida\n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666840691077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,11 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function store(Request $request)\n     {\n-        $valida\n+        $validator=$request->validate([\n+            ''\n+        ])\n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666840697090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n      */\n     public function store(Request $request)\n     {\n         $validator=$request->validate([\n-            ''\n+            'username'\n         ])\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840703634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n      */\n     public function store(Request $request)\n     {\n         $validator=$request->validate([\n-            'username'\n+            'username'=>'required|unique:table,column,except,id'\n         ])\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840712555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n      */\n     public function store(Request $request)\n     {\n         $validator=$request->validate([\n-            'username'=>'required|unique:table,column,except,id'\n+            'username'=>'required|unique:user'\n         ])\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840717751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,10 @@\n      */\n     public function store(Request $request)\n     {\n         $validator=$request->validate([\n-            'username'=>'required|unique:user'\n+            'username'=>'required|unique:users',\n+            'password'=>'required|unique:password\n         ])\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840723436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     public function store(Request $request)\n     {\n         $validator=$request->validate([\n             'username'=>'required|unique:users',\n-            'password'=>'required|unique:password\n+            'password'=>'min\n         ])\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840731781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,11 @@\n     public function store(Request $request)\n     {\n         $validator=$request->validate([\n             'username'=>'required|unique:users',\n-            'password'=>'min\n+            'password'=>'min:5'\n         ])\n+        \n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666840742422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,11 @@\n     {\n         $validator=$request->validate([\n             'username'=>'required|unique:users',\n             'password'=>'min:5'\n-        ])\n-        \n+        ]);\n+        $model= User::create()\n+\n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666840769782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Models\\Role;\n use App\\Models\\User;\n use Illuminate\\Http\\Request;\n+use Illuminate\\Support\\Facades\\Hash;\n \n class UserController extends Controller\n {\n     /**\n@@ -44,9 +45,12 @@\n         $validator=$request->validate([\n             'username'=>'required|unique:users',\n             'password'=>'min:5'\n         ]);\n-        $model= User::create()\n+        $model= User::create([\n+            'username'=>$request->username,\n+            'password'=>Hash::make($request->password)\n+        ])\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840775825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,10 @@\n         ]);\n         $model= User::create([\n             'username'=>$request->username,\n             'password'=>Hash::make($request->password)\n-        ])\n+        ]);\n+        $model->\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840971922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         $model= User::create([\n             'username'=>$request->username,\n             'password'=>Hash::make($request->password)\n         ]);\n-        $model->\n+        $model->craee\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840984084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         $model= User::create([\n             'username'=>$request->username,\n             'password'=>Hash::make($request->password)\n         ]);\n-        $model->craee\n+        $model->attachRole\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666840992476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         $model= User::create([\n             'username'=>$request->username,\n             'password'=>Hash::make($request->password)\n         ]);\n-        $model->attachRole\n+        $model->attachRole($request->role);\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666841015426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,14 @@\n             'password'=>Hash::make($request->password)\n         ]);\n         $model->attachRole($request->role);\n \n+        if($model){\n+            return to_route('city.index')->withSuccess(\"Create New City Successfully !!\");\n+        }else{\n+            return to_route('city.index')->withDanger(\"Failed Create New City!!\");\n+        }\n+\n     }\n \n     /**\n      * Display the specified resource.\n"
+                },
+                {
+                    "date": 1666841033431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         ]);\n         $model->attachRole($request->role);\n \n         if($model){\n-            return to_route('city.index')->withSuccess(\"Create New City Successfully !!\");\n+            return to_route('user.index ')->withSuccess(\"Create New City Successfully !!\");\n         }else{\n             return to_route('city.index')->withDanger(\"Failed Create New City!!\");\n         }\n \n"
+                },
+                {
+                    "date": 1666841038606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,11 +52,11 @@\n         ]);\n         $model->attachRole($request->role);\n \n         if($model){\n-            return to_route('user.index ')->withSuccess(\"Create New City Successfully !!\");\n+            return to_route('user.index')->withSuccess(\"Create New City Successfully !!\");\n         }else{\n-            return to_route('city.index')->withDanger(\"Failed Create New City!!\");\n+            return to_route('user.index')->withDanger(\"Failed Create New City!!\");\n         }\n \n     }\n \n"
+                },
+                {
+                    "date": 1666841076757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         ]);\n         $model->attachRole($request->role);\n \n         if($model){\n-            return to_route('user.index')->withSuccess(\"Create New City Successfully !!\");\n+            return to_route('user.index')->withSuccess(\" New City Successfully !!\");\n         }else{\n             return to_route('user.index')->withDanger(\"Failed Create New City!!\");\n         }\n \n"
+                },
+                {
+                    "date": 1666841084767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         ]);\n         $model->attachRole($request->role);\n \n         if($model){\n-            return to_route('user.index')->withSuccess(\" New City Successfully !!\");\n+            return to_route('user.index')->withSuccess(\"Create New Users Successfully !!\");\n         }else{\n             return to_route('user.index')->withDanger(\"Failed Create New City!!\");\n         }\n \n"
+                },
+                {
+                    "date": 1666841091267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n \n         if($model){\n             return to_route('user.index')->withSuccess(\"Create New Users Successfully !!\");\n         }else{\n-            return to_route('user.index')->withDanger(\"Failed Create New City!!\");\n+            return to_route('user.index')->withDanger(\"Failed Create New user!!\");\n         }\n \n     }\n \n"
+                },
+                {
+                    "date": 1666841312424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        $roles=Role::all();\n+        $roles=Role::where all();\n         return view('features.users.create',compact('roles'));\n         \n     }\n \n@@ -52,9 +52,9 @@\n         ]);\n         $model->attachRole($request->role);\n \n         if($model){\n-            return to_route('user.index')->withSuccess(\"Create New Users Successfully !!\");\n+            return to_route('user.index')->withSuccess(\"Create New User Successfully !!\");\n         }else{\n             return to_route('user.index')->withDanger(\"Failed Create New user!!\");\n         }\n \n"
+                },
+                {
+                    "date": 1666841319190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        $roles=Role::where all();\n+        $roles=Role::where('role','') all();\n         return view('features.users.create',compact('roles'));\n         \n     }\n \n"
+                },
+                {
+                    "date": 1666841327149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        $roles=Role::where('role','') all();\n+        $roles=Role::where('role','=','admin')-> all();\n         return view('features.users.create',compact('roles'));\n         \n     }\n \n"
+                },
+                {
+                    "date": 1666841332393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        $roles=Role::where('role','=','admin')-> all();\n+        $roles=Role::where('role','=','admin')->get();\n         return view('features.users.create',compact('roles'));\n         \n     }\n \n"
+                },
+                {
+                    "date": 1666841463138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        $roles=Role::where('role','=','admin')->get();\n+        $roles=Role::where('name','=','admin')->get();\n         return view('features.users.create',compact('roles'));\n         \n     }\n \n"
+                },
+                {
+                    "date": 1666841474442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function create()\n     {\n-        $roles=Role::where('name','','admin')->get();\n+        $roles=Role::where('name','<','admin')->get();\n         return view('features.users.create',compact('roles'));\n         \n     }\n \n"
+                },
+                {
+                    "date": 1666841615702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function store(Request $request)\n     {\n-        dd($request->all)\n+        dd($request->all());\n         $validator=$request->validate([\n             'username'=>'required|unique:users',\n             'password'=>'min:5'\n         ]);\n"
+                }
+            ],
+            "date": 1666839408267,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass UserController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function index()\n    {\n        return view\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function create()\n    {\n        //\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function store(Request $request)\n    {\n        //\n    }\n\n    /**\n     * Display the specified resource.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function show($id)\n    {\n        //\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function edit($id)\n    {\n        //\n    }\n\n    /**\n     * Update the specified resource in storage.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function update(Request $request, $id)\n    {\n        //\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function destroy($id)\n    {\n        //\n    }\n}\n"
+        }
+    ]
+}

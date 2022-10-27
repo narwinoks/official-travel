@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1666630889081,
@@ -16,6 +16,10 @@
                 {
                     "date": 1666630905227,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Submission() {\n-        return $this-\n+        return $this->\n     }\n }\n"
+                },
+                {
+                    "date": 1666839498797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,6 +47,6 @@\n     public function Submission() {\n         return $this->hasMany(Submission::class);\n     }\n \n-    public function \n+    public function R\n }\n"
                 }
             ],
             "date": 1666630889081,

@@ -18,6 +18,9 @@ return [
         'sdm'=>[
             'city' =>'c,r,u,d',
             'pengajuaan' => 'c,r,u',
+        ],
+        'admin'=>[
+            'user' =>'c,r,u,d',
         ]
     ],
 

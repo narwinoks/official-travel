@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Models/Role.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666839470794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666839476801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n class Role extends LaratrustRole\n {\n     public $guarded = [];\n \n-    public function User()\n+    public function User(){\n+        return $this\n+    }\n }\n"
+                },
+                {
+                    "date": 1666839484013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n {\n     public $guarded = [];\n \n     public function User(){\n-        return $this\n+        return $this->belongsTo(User::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1666839755286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,6 @@\n \n class Role extends LaratrustRole\n {\n     public $guarded = [];\n-\n-    public function User(){\n-        return $this->belongsTo(User::class);\n-    }\n+    \n }\n"
+                }
+            ],
+            "date": 1666839470794,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Laratrust\\Models\\LaratrustRole;\n\nclass Role extends LaratrustRole\n{\n    public $guarded = [];\n\n    public function User()\n}\n"
+        }
+    ]
+}

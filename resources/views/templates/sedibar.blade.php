@@ -47,6 +47,13 @@
               <span class="link-title">My Submission</span>
             </a>
           </li>
+          @elseif(Auth::User()->hasRole('admin'))
+          <li class="nav-item">
+            <a href="{{ route('user.index') }}" class="nav-link">
+              <i class="link-icon" data-feather="message-square"></i>
+              <span class="link-title">User</span>
+            </a>
+          </li>
           @endif
 
         </ul>

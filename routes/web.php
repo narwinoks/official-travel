@@ -5,6 +5,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\SubmissionsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ Route::controller(AuthController::class)->group(function(){
     Route::post('/login', 'ProcessLogin')->name('login');
     Route::post('/logout', 'logout')->name('logout');
 });
+Route::resource('user', UserController::class)->middleware(['auth','role:admin']);
 Route::resource('city', CityController::class)->middleware('auth');
 Route::controller(DataController::class)->group(function(){
     Route::prefix('data')->group(function(){

@@ -21,5 +21,10 @@ class UserSeeder extends Seeder
             'password' =>Hash::make('password')
         ]);
         $model->attachRole(1);
+        // $model=User::create([
+        //     'username' =>'admin',
+        //     'password' =>Hash::make('password')
+        // ]);
+        // $model->attachRole(3);
     }
 }

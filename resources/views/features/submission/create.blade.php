@@ -76,7 +76,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <label for="" class="form Label">Total Perjalaan Dinas</label>
-                                <h4><span id="result">11</span> Hari</h4>
+                                <h4><span id="result">0</span> Hari</h4>
                             </div>
                             <div class="col-md-4"></div>
                         </div>
